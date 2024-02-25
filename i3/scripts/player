@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+
+TITLE="$(playerctl metadata title)"
+ARTIST="$(playerctl metadata artist)"
+
+function cut_20() {
+  if [[ $(echo $1 | wc -m) -gt 25 ]]; then
+    echo "$(echo $1 | cut -c -25 | tr -dc '[:print:]')..."
+  else
+    echo $1
+  fi
+}
+
+if [[ $(echo $ARTIST | wc -m) == 1 ]]; then
+  echo $(cut_20 "$TITLE")
+else
+  echo $(cut_20 "$TITLE") " - " $(cut_20 "$ARTIST")
+fi
+
