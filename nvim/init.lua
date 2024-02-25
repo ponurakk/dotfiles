@@ -29,10 +29,9 @@ require("lazy").setup({
   "udalov/kotlin-vim",
   require("ponurakk.plugins.markdown"),
 
-  require("ponurakk.plugins.nvim-lspconfig"),
   require("ponurakk.plugins.nvim-cmp"),
+  require("ponurakk.plugins.nvim-lspconfig"),
   require("ponurakk.plugins.nvim-telescope"),
-  { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
   require("ponurakk.plugins.nvim-treesitter"),
   require("ponurakk.plugins.nvim-tree"),
 
