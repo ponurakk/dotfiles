@@ -51,6 +51,16 @@ bindsym $mod+7    workspace  $ws7
 bindsym $mod+8    workspace  $ws8
 bindsym $mod+9    workspace  $ws9
 bindsym $mod+0    workspace  $ws10
+bindsym $mod+Ctrl+1    workspace  $ws11
+bindsym $mod+Ctrl+2    workspace  $ws12
+bindsym $mod+Ctrl+3    workspace  $ws13
+bindsym $mod+Ctrl+4    workspace  $ws14
+bindsym $mod+Ctrl+5    workspace  $ws15
+bindsym $mod+Ctrl+6    workspace  $ws16
+bindsym $mod+Ctrl+7    workspace  $ws17
+bindsym $mod+Ctrl+8    workspace  $ws18
+bindsym $mod+Ctrl+9    workspace  $ws19
+bindsym $mod+Ctrl+0    workspace  $ws20
 
 # move focused container to workspace
 bindsym $mod+Shift+1    move container to workspace  $ws1
@@ -63,6 +73,16 @@ bindsym $mod+Shift+7    move container to workspace  $ws7
 bindsym $mod+Shift+8    move container to workspace  $ws8
 bindsym $mod+Shift+9    move container to workspace  $ws9
 bindsym $mod+Shift+0    move container to workspace  $ws10
+bindsym $mod+Ctrl+Shift+1    move container to workspace  $ws11
+bindsym $mod+Ctrl+Shift+2    move container to workspace  $ws12
+bindsym $mod+Ctrl+Shift+3    move container to workspace  $ws13
+bindsym $mod+Ctrl+Shift+4    move container to workspace  $ws14
+bindsym $mod+Ctrl+Shift+5    move container to workspace  $ws15
+bindsym $mod+Ctrl+Shift+6    move container to workspace  $ws16
+bindsym $mod+Ctrl+Shift+7    move container to workspace  $ws17
+bindsym $mod+Ctrl+Shift+8    move container to workspace  $ws18
+bindsym $mod+Ctrl+Shift+9    move container to workspace  $ws19
+bindsym $mod+Ctrl+Shift+0    move container to workspace  $ws20
 
 ################
 # Window Modes #
@@ -200,7 +220,7 @@ bindsym Shift+XF86AudioPrev exec playerctl position 5-
 # bindsym $mod+p exec /usr/local/bin/switch-audio-port
 
 ## App shortcuts
-bindsym $mod+Ctrl+w exec /usr/bin/waterfox-g
+bindsym $mod+Ctrl+w exec /usr/bin/firefox-developer-edition
 # bindsym $mod+Ctrl+m workspace $ws10; exec xfce4-terminal -e cmus
 bindsym $mod+Ctrl+m workspace $ws10; exec $terminal --detach cmus
 bindsym $mod+Ctrl+n exec /usr/bin/thunar
@@ -218,15 +238,25 @@ bindsym $mod+Shift+p exec ~/.config/i3/scripts/power-profiles
 ##########################################
 
 set $ws1 "1: "
-set $ws2 "2: "
+set $ws2 "2: "
 set $ws3 "3:" 
 set $ws4 "4: "
 set $ws5 "5: "
 set $ws6 "6: "
 set $ws7 "7: "
-set $ws8 "8: "
+set $ws8 "8:"
 set $ws9 "9:"
 set $ws10 "10:"
+set $ws11 "1: "
+set $ws12 "2: "
+set $ws13 "3:󰛮 "
+set $ws14 "4:"
+set $ws15 "5:"
+set $ws16 "6:"
+set $ws17 "7:"
+set $ws18 "8:"
+set $ws19 "9:"
+set $ws20 "10:"
 
 workspace $ws1 output LVDS
 workspace $ws2 output VGA-0
@@ -234,10 +264,20 @@ workspace $ws3 output VGA-0
 workspace $ws4 output LVDS
 workspace $ws5 output VGA-0
 workspace $ws6 output LVDS
-workspace $ws7 output LVDS
+workspace $ws7 output VGA-0
 workspace $ws8 output VGA-0
 workspace $ws9 output LVDS
 workspace $ws10 output LVDS
+workspace $ws11 output LVDS
+workspace $ws12 output LVDS
+workspace $ws13 output VGA-0
+workspace $ws14 output LVDS
+workspace $ws15 output LVDS
+workspace $ws16 output LVDS
+workspace $ws17 output LVDS
+workspace $ws18 output LVDS
+workspace $ws19 output LVDS
+workspace $ws20 output LVDS
 
 ## ws2
 assign [class="(?i)waterfox"] $ws2
@@ -245,8 +285,6 @@ assign [class="(?i)firefox"] $ws2
 assign [class="(?i)LibreWolf"] $ws2
 
 ## ws3
-assign [class="thunderbird"] $ws3
-assign [class="lutris"] $ws3
 assign [class="Project-manager"] $ws3
 
 ## ws4
@@ -263,13 +301,27 @@ assign [class="factorio(?i)"] $ws6
 assign [class="Terraria.bin.x86_64(?i)"] $ws6
 assign [class="WineDesktop - Wine desktop"] $ws6
 assign [class="explorer.exe"] $ws6
-assign [class="QEMU"] $ws6
 
 ## ws7
 assign [class="steam"] $ws7
 
+## ws8
+assign [class="Lutris"] $ws8
+
 ## ws9
 assign [class="obsidian"] $ws9
+
+## ws11
+assign [class="Gimp"] $ws11
+
+## ws12
+assign [class="Qemu-system-x86_64"] $ws12
+
+## ws13
+assign [class="thunderbird"] $ws13
+
+## ws14
+assign [class="libreoffice"] $ws14
 
 for_window [class=Xfce4-terminal] focus
 for_window [class=kitty] focus
@@ -369,6 +421,7 @@ for_window [class="Blueberry.py" instance="blueberry.py"] floating enable
 for_window [class="Bluetooth-sendto" instance="bluetooth-sendto"] floating enable
 for_window [class="Pamac-manager"] floating enable
 for_window [class="bitwarden"] floating enable
+for_window [class="Gpick"] floating enable
 for_window [window_role="About"] floating enable
 for_window [window_role="Steam Settings"] floating enable
 
