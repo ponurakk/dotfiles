@@ -63,4 +63,7 @@ require("ponurakk.settings")
 require("ponurakk.keymaps")
 require("ponurakk.lsp")
 
+-- Scripts
+require("ponurakk.scripts.sql-rust-format")
+
 require("ponurakk.plugins.nvim-tree").setup()

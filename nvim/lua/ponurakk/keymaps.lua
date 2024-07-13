@@ -29,6 +29,9 @@ vim.keymap.set("n", "<F3>", ":noh<CR>")
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 
+vim.keymap.set('n', "K", "lua vim.lsp.buf.hover()")
+vim.keymap.set('n', "gd", "lua vim.lsp.buf.definition()")
+
 require("which-key").register({
   ["<leader>;"] = { "<cmd>Alpha<CR>", "Dashboard" },
 
