@@ -1,3 +1,4 @@
+local icons = require("ponurakk.icons")
 -- [[ Basic Keymaps ]]
 
 -- Disable Space
@@ -32,109 +33,95 @@ vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 vim.keymap.set('n', "K", "lua vim.lsp.buf.hover()")
 vim.keymap.set('n', "gd", "lua vim.lsp.buf.definition()")
 
-require("which-key").register({
-  ["<leader>;"] = { "<cmd>Alpha<CR>", "Dashboard" },
+require("which-key").add({
+  { "<leader>;", "<cmd>Alpha<CR>",                          desc = "Dashboard",                   icon = icons.ui.Dashboard },
+  { "<leader>/", "<Plug>(comment_toggle_linewise_current)", desc = "Comment toggle current line", icon = icons.ui.Comment },
+  -- { "<leader>c", "<cmd>BufferKill<CR>",                     desc = "Close Buffer" },
+  { "<leader>f", "<cmd>Telescope find_files<cr>",           desc = "Find File",                   icon = icons.ui.FindFile },
+  { "<leader>e", "<cmd>NvimTreeToggle<CR>",                 desc = "Explorer",                    icon = icons.ui.Tree },
+  { "<leader>u", vim.cmd.UndotreeToggle,                    desc = "Show UndoTree",               icon = icons.ui.Tree },
 
-  ["<leader>/"] = { "<Plug>(comment_toggle_linewise_current)", "Comment toggle current line" },
-
-  ["<leader>c"] = { "<cmd>BufferKill<CR>", "Close Buffer" },
-
-  ["<leader>f"] = { "<cmd>Telescope find_files<cr>", "Find File" },
-
-  ["<leader>e"] = { "<cmd>NvimTreeToggle<CR>", "Explorer" },
-
-  ["<leader>u"] = { vim.cmd.UndotreeToggle, "Show UndoTree" },
-
-  ["<leader>b"] = {
-    name = "Buffers",
-    j = { "<cmd>BufferLinePick<cr>", "Jump" },
-    f = { "<cmd>Telescope buffers previewer=false<cr>", "Find" },
-    b = { "<cmd>BufferLineCyclePrev<cr>", "Previous" },
-    n = { "<cmd>BufferLineCycleNext<cr>", "Next" },
-    W = { "<cmd>noautocmd w<cr>", "Save without formatting (noautocmd)" },
-    e = {
-      "<cmd>BufferLinePickClose<cr>",
-      "Pick which buffer to close",
-    },
-    h = { "<cmd>BufferLineCloseLeft<cr>", "Close all to the left" },
-    l = {
-      "<cmd>BufferLineCloseRight<cr>",
-      "Close all to the right",
-    },
-    D = {
-      "<cmd>BufferLineSortByDirectory<cr>",
-      "Sort by directory",
-    },
-    L = {
-      "<cmd>BufferLineSortByExtension<cr>",
-      "Sort by language",
-    },
+  {
+    "<leader>b",
+    group = "Bufers",
+    icon = icons.ui.Buffer,
+    { "<leader>bj", "<cmd>BufferLinePick<cr>",                    desc = "Jump" },
+    { "<leader>bf", "<cmd>Telescope buffers previewer=false<cr>", desc = "Find" },
+    { "<leader>bb", "<cmd>BufferLineCyclePrev<cr>",               desc = "Previous" },
+    { "<leader>bn", "<cmd>BufferLineCycleNext<cr>",               desc = "Next" },
+    { "<leader>bW", "<cmd>noautocmd w<cr>",                       desc = "Save without formatting (noautocmd)" },
+    { "<leader>be", "<cmd>BufferLinePickClose<cr>",               desc = "Pick which buffer to close", },
+    { "<leader>bh", "<cmd>BufferLineCloseLeft<cr>",               desc = "Close all to the left" },
+    { "<leader>bl", "<cmd>BufferLineCloseRight<cr>",              desc = "Close all to the right", },
+    { "<leader>bD", "<cmd>BufferLineSortByDirectory<cr>",         desc = "Sort by directory", },
+    { "<leader>bL", "<cmd>BufferLineSortByExtension<cr>",         desc = "Sort by language", },
   },
 
-  ["<leader>p"] = {
-    name = "Plugins",
-    i = { "<cmd>Lazy install<cr>", "Install" },
-    s = { "<cmd>Lazy sync<cr>", "Sync" },
-    S = { "<cmd>Lazy clear<cr>", "Status" },
-    c = { "<cmd>Lazy clean<cr>", "Clean" },
-    u = { "<cmd>Lazy update<cr>", "Update" },
-    p = { "<cmd>Lazy profile<cr>", "Profile" },
-    l = { "<cmd>Lazy log<cr>", "Log" },
-    d = { "<cmd>Lazy debug<cr>", "Debug" },
+  {
+    "<leader>p",
+    group = "Plugins",
+    icon = icons.ui.Plug,
+    { "<leader>pi", "<cmd>Lazy install<cr>", desc = "Install" },
+    { "<leader>ps", "<cmd>Lazy sync<cr>",    desc = "Sync" },
+    { "<leader>pS", "<cmd>Lazy clear<cr>",   desc = "Status" },
+    { "<leader>pc", "<cmd>Lazy clean<cr>",   desc = "Clean" },
+    { "<leader>pu", "<cmd>Lazy update<cr>",  desc = "Update" },
+    { "<leader>pp", "<cmd>Lazy profile<cr>", desc = "Profile" },
+    { "<leader>pl", "<cmd>Lazy log<cr>",     desc = "Log" },
+    { "<leader>pd", "<cmd>Lazy debug<cr>",   desc = "Debug" },
   },
 
-  ["<leader>l"] = {
-    name = "LSP",
-    a = { "<cmd>lua vim.lsp.buf.code_action()<cr>", "Code Action" },
-    d = { "<cmd>Telescope diagnostics bufnr=0 theme=get_ivy<cr>", "Buffer Diagnostics" },
-    w = { "<cmd>Telescope diagnostics<cr>", "Diagnostics" },
-    f = { "<cmd>Format<CR>", "Format" },
-    i = { "<cmd>LspInfo<cr>", "Info" },
-    I = { "<cmd>Mason<cr>", "Mason Info" },
-    D = { "<cmd>lua vim.diagnostic.open_float()<CR>", "Line diagnostics" },
-    j = { "<cmd>lua vim.diagnostic.goto_next()<cr>", "Next Diagnostic", },
-    k = { "<cmd>lua vim.diagnostic.goto_prev()<cr>", "Prev Diagnostic", },
-    l = { "<cmd>lua vim.lsp.codelens.run()<cr>", "CodeLens Action" },
-    q = { "<cmd>lua vim.diagnostic.setloclist()<cr>", "Quickfix" },
-    r = { "<cmd>lua vim.lsp.buf.rename()<cr>", "Rename" },
-    s = { "<cmd>Telescope lsp_document_symbols<cr>", "Document Symbols" },
-    S = {
-      "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>",
-      "Workspace Symbols",
-    },
-    e = { "<cmd>Telescope quickfix<cr>", "Telescope Quickfix" },
+  {
+    "<leader>l",
+    group = "LSP",
+    icon = icons.ui.Language,
+    { "<leader>la", "<cmd>lua vim.lsp.buf.code_action()<cr>",               desc = "Code Action" },
+    { "<leader>ld", "<cmd>Telescope diagnostics bufnr=0 theme=get_ivy<cr>", desc = "Buffer Diagnostics" },
+    { "<leader>lw", "<cmd>Telescope diagnostics<cr>",                       desc = "Diagnostics" },
+    { "<leader>lf", "<cmd>Format<CR>",                                      desc = "Format" },
+    { "<leader>li", "<cmd>LspInfo<cr>",                                     desc = "Info" },
+    { "<leader>lI", "<cmd>Mason<cr>",                                       desc = "Mason Info" },
+    { "<leader>lD", "<cmd>lua vim.diagnostic.open_float()<CR>",             desc = "Line diagnostics" },
+    { "<leader>lj", "<cmd>lua vim.diagnostic.goto_next()<cr>",              desc = "Next Diagnostic", },
+    { "<leader>lk", "<cmd>lua vim.diagnostic.goto_prev()<cr>",              desc = "Prev Diagnostic", },
+    { "<leader>ll", "<cmd>lua vim.lsp.codelens.run()<cr>",                  desc = "CodeLens Action" },
+    { "<leader>lq", "<cmd>lua vim.diagnostic.setloclist()<cr>",             desc = "Quickfix" },
+    { "<leader>lr", "<cmd>lua vim.lsp.buf.rename()<cr>",                    desc = "Rename" },
+    { "<leader>ls", "<cmd>Telescope lsp_document_symbols<cr>",              desc = "Document Symbols" },
+    { "<leader>lS", "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>",     desc = "Workspace Symbols", },
+    { "<leader>le", "<cmd>Telescope quickfix<cr>",                          desc = "Telescope Quickfix" },
   },
 
-  ["<leader>s"] = {
-    name = "Search",
-    b = { "<cmd>Telescope git_branches<cr>", "Checkout branch" },
-    c = { "<cmd>Telescope colorscheme<cr>", "Colorscheme" },
-    f = { "<cmd>Telescope find_files<cr>", "Find File" },
-    h = { "<cmd>Telescope help_tags<cr>", "Find Help" },
-    H = { "<cmd>Telescope highlights<cr>", "Find highlight groups" },
-    M = { "<cmd>Telescope man_pages<cr>", "Man Pages" },
-    r = { "<cmd>Telescope oldfiles<cr>", "Open Recent File" },
-    R = { "<cmd>Telescope registers<cr>", "Registers" },
-    t = { "<cmd>Telescope live_grep<cr>", "Text" },
-    k = { "<cmd>Telescope keymaps<cr>", "Keymaps" },
-    C = { "<cmd>Telescope commands<cr>", "Commands" },
-    l = { "<cmd>Telescope resume<cr>", "Resume last search" },
-    p = { "<cmd>lua require('telescope.builtin').colorscheme({enable_preview = true})<cr>", "Colorscheme with Preview" },
+  {
+    "<leader>s",
+    group = "Search",
+    icon = icons.ui.Search,
+    { "<leader>sb", "<cmd>Telescope git_branches<cr>",                                                desc = "Checkout branch" },
+    { "<leader>sc", "<cmd>Telescope colorscheme<cr>",                                                 desc = "Colorscheme" },
+    { "<leader>sf", "<cmd>Telescope find_files<cr>",                                                  desc = "Find File",                icon = icons.ui.FindFile },
+    { "<leader>sh", "<cmd>Telescope help_tags<cr>",                                                   desc = "Find Help" },
+    { "<leader>sH", "<cmd>Telescope highlights<cr>",                                                  desc = "Find highlight groups" },
+    { "<leader>sM", "<cmd>Telescope man_pages<cr>",                                                   desc = "Man Pages" },
+    { "<leader>sr", "<cmd>Telescope oldfiles<cr>",                                                    desc = "Open Recent File" },
+    { "<leader>sR", "<cmd>Telescope registers<cr>",                                                   desc = "Registers" },
+    { "<leader>st", "<cmd>Telescope live_grep<cr>",                                                   desc = "Text",                     icon = icons.ui.FindText },
+    { "<leader>sk", "<cmd>Telescope keymaps<cr>",                                                     desc = "Keymaps" },
+    { "<leader>sC", "<cmd>Telescope commands<cr>",                                                    desc = "Commands" },
+    { "<leader>sl", "<cmd>Telescope resume<cr>",                                                      desc = "Resume last search" },
+    { "<leader>sp", "<cmd>lua require('telescope.builtin').colorscheme({enable_preview = true})<cr>", desc = "Colorscheme with Preview", },
   },
 
-  ["<leader>T"] = {
-    name = "Treesitter",
-    i = { ":TSConfigInfo<cr>", "Info" },
+  {
+    "<leader>T",
+    group = "Tresitter",
+    { "<leader>Ti", ":TSConfigInfo<cr>", desc = "Info", icon = icons.diagnostics.Information },
   }
 })
 
-
-require("which-key").register({
-  ["<leader>"] = { name = "VISUAL <leader>" },
-  ["<leader>h"] = { "Git [H]unk" },
-  ["<leader>/"] = { "<Plug>(comment_toggle_linewise_visual)", "Comment toggle linewise (visual)" },
-  ["<leader>l"] = {
-    name = "LSP",
-    a = { "<cmd>lua vim.lsp.buf.code_action()<cr>", "Code Action" },
-  },
-}, { mode = "v" })
+require("which-key").add({
+  mode = { "v" },
+  { "<leader>",   name = "VISUAL <leader>" },
+  { "<leader>h",  "Git [H]unk" },
+  { "<leader>/",  "<Plug>(comment_toggle_linewise_visual)", desc = "Comment toggle linewise (visual)" },
+  { "<leader>la", "<cmd>lua vim.lsp.buf.code_action()<cr>", desc = "Code Action" },
+})
