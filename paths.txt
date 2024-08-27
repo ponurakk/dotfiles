@@ -1,0 +1,21 @@
+# Config
+.config/btop
+.config/dunst
+.config/fastfetch
+.config/fish
+.config/i3
+.config/kitty
+.config/nvim
+.config/rofi
+.config/picom.conf
+.config/starship.toml
+.config/cmus/rc
+.config/flameshot
+# Local
+.local/bin/tmux-sessionizer
+.local/share/fonts/Iosevka-Nerd-Font-Complete.ttf
+.local/share/fonts/JetBrains-Mono-Nerd-Font-Complete.ttf
+# Home
+.ideavimrc
+.tmux.conf
+.zshrc
