@@ -42,15 +42,15 @@ vim.opt.completeopt = 'menuone,noselect'
 
 vim.opt.termguicolors = true
 vim.opt.colorcolumn = "120"
-vim.opt.conceallevel = 0
+vim.opt.conceallevel = 2
 vim.opt.wrap = false
 
-vim.api.nvim_create_autocmd({ "BufEnter", "BufWinEnter" }, {
-  pattern = { "*.md" },
-  callback = function()
-    vim.opt.conceallevel = 1
-  end
-})
+-- vim.api.nvim_create_autocmd({ "BufEnter", "BufWinEnter" }, {
+--   pattern = { "*.md" },
+--   callback = function()
+--     vim.opt.conceallevel = 1
+--   end
+-- })
 
 -- Padding to screen before scroll
 vim.opt.scrolloff = 8

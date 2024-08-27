@@ -132,12 +132,24 @@ M.diagnostics = {
   -- cond = conditions.hide_in_width,
 }
 
+M.codeium = {
+  function()
+    return vim.api.nvim_call_function("codeium#GetStatusString", {})
+  end
+}
+
 M.progress = {
   "progress",
   fmt = function()
     return "%P/%L"
   end,
   color = {},
+}
+
+M.timewasted = {
+  function()
+    return require("timewasted").get_fmt()
+  end
 }
 
 return {
@@ -156,7 +168,7 @@ return {
       lualine_a = { M.mode },
       lualine_b = { M.branch },
       lualine_c = { M.diff, M.filename, M.navic },
-      lualine_x = { M.diagnostics, },
+      lualine_x = { M.diagnostics, M.codeium, M.timewasted },
       lualine_y = { M.spaces, M.filetype, M.fileformat, M.treesitter, M.location },
       lualine_z = { M.progress }
     },

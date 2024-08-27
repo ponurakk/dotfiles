@@ -23,10 +23,15 @@ require("lazy").setup({
   "wakatime/vim-wakatime",
   "ActivityWatch/aw-watcher-vim",
   require("ponurakk.plugins.presence"),
+  require("ponurakk.plugins.timewasted"),
 
   -- Syntax
   "ziglang/zig.vim",
   "udalov/kotlin-vim",
+  "fwcd/kotlin-language-server",
+  -- "jdonaldson/vaxe",
+  "mustache/vim-mustache-handlebars",
+  require("ponurakk.plugins.flutter-tools"),
   require("ponurakk.plugins.markdown"),
 
   require("ponurakk.plugins.nvim-cmp"),
@@ -54,9 +59,11 @@ require("lazy").setup({
   require("ponurakk.plugins.undotree"),
   require("ponurakk.plugins.gitsigns"),
   require("ponurakk.plugins.guess-indent"),
+  require("ponurakk.plugins.codeium"),
   "christoomey/vim-tmux-navigator",
   "numToStr/Comment.nvim",
   "RRethy/vim-illuminate",
+  "leafOfTree/vim-vue-plugin",
 }, {})
 
 require("ponurakk.settings")
