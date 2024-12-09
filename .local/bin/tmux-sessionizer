@@ -9,8 +9,6 @@ fi
 selected_name=$(basename "$selected" | tr . _)
 tmux_running=$(pgrep tmux)
 
-echo $1
-
 if [[ "$1" == "w" ]]; then
   tmux rename-window "$selected_name"
   tmux respawn-window -k "cd '$selected' && clear; $SHELL"

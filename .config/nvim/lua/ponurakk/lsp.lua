@@ -65,7 +65,7 @@ local servers = {
   rust_analyzer = {},
   kotlin_language_server = {},
 
-  tsserver = {
+  ts_ls = {
     init_options = {
       plugins = {
         {

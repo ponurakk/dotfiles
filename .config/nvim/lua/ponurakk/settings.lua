@@ -30,6 +30,9 @@ vim.opt.swapfile = false
 vim.opt.backup = false
 vim.opt.undodir = vim.fn.expand("~/.vim/undodir")
 
+vim.g.undotree_SplitWidth = 40
+vim.g.undotree_WindowLayout = 3 -- set on right side
+
 -- Keep signcolumn on by default
 vim.opt.signcolumn = 'yes'
 
@@ -41,7 +44,7 @@ vim.opt.timeoutlen = 300
 vim.opt.completeopt = 'menuone,noselect'
 
 vim.opt.termguicolors = true
-vim.opt.colorcolumn = "120"
+vim.opt.colorcolumn = "100"
 vim.opt.conceallevel = 2
 vim.opt.wrap = false
 
