@@ -98,30 +98,42 @@ while getopts "hcp:" option; do
   esac
 done
 
-# Check whether a command exists
-function command_exists() {
-  command -v "$1" &> /dev/null 2>&1
-}
-
-# systemctl required
-if ! command_exists systemctl ; then
-  exit 1
-fi
+# # Check whether a command exists
+# function command_exists() {
+#   command -v "$1" &> /dev/null 2>&1
+# }
+#
+# # systemctl required
+# if ! command_exists systemctl ; then
+#   exit 1
+# fi
 
 # menu defined as an associative array
 typeset -A menu
 
 # Menu with keys/commands
 
-menu=(
-  [  Shutdown]="systemctl poweroff"
-  [  Reboot]="systemctl reboot"
-  [  Suspend]="systemctl suspend"
-  [  Hibernate]="systemctl hibernate"
-  [  Lock]="~/.config/i3/scripts/blur-lock"
-  [  Logout]="i3-msg exit"
-  [  Cancel]=""
-)
+if type systemctl > /dev/null; then
+  menu=(
+    [  Shutdown]="systemctl poweroff"
+    [  Reboot]="systemctl reboot"
+    [  Suspend]="systemctl suspend"
+    [  Hibernate]="systemctl hibernate"
+    [  Lock]="~/.config/i3/scripts/blur-lock"
+    [  Logout]="i3-msg exit"
+    [  Cancel]=""
+  )
+else
+  menu=(
+    [  Shutdown]="loginctl poweroff"
+    [  Reboot]="loginctl reboot"
+    [  Suspend]="loginctl suspend"
+    [  Hibernate]="loginctl hibernate"
+    [  Lock]="~/.config/i3/scripts/blur-lock"
+    [  Logout]="i3-msg exit"
+    [  Cancel]=""
+  )
+fi
 
 menu_nrows=${#menu[@]}
 

@@ -1,11 +1,21 @@
 #!/usr/bin/env bash
-
 PICTURE=/tmp/i3lock.png
-SCREENSHOT="scrot -z $PICTURE"
-
-BLUR="5x4"
+# menyoki is faster so it is prefered
+if type menyoki > /dev/null; then
+  SCREENSHOT="menyoki capture -r save $PICTURE"
+else
+  SCREENSHOT="scrot -z $PICTURE"
+fi
 
 $SCREENSHOT
-convert $PICTURE -blur $BLUR $PICTURE
+
+if type menyokis > /dev/null; then
+  BLUR="5"
+  menyoki edit $PICTURE --blur $BLUR save $PICTURE
+else
+  BLUR="5x4"
+  convert $PICTURE -blur $BLUR $PICTURE
+fi
+
 i3lock -i $PICTURE
 rm $PICTURE
