@@ -27,7 +27,7 @@ require("lazy").setup({
 
   -- Syntax
   "ziglang/zig.vim",
-  "udalov/kotlin-vim",
+  -- "udalov/kotlin-vim",
   "fwcd/kotlin-language-server",
   -- "jdonaldson/vaxe",
   "mustache/vim-mustache-handlebars",
