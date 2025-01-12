@@ -6,7 +6,7 @@ vim.keymap.set({ "n", "v" }, "<Space>", "<Nop>", { silent = true })
 vim.keymap.set("n", "q:", "<Nop>", { silent = true })
 
 -- Diagnostic keymaps
-vim.keymap.set("n", "<leader>t", vim.diagnostic.open_float, { desc = "Open floating diagnostic message" })
+-- vim.keymap.set("n", "<leader>t", vim.diagnostic.open_float, { desc = "Open floating diagnostic message" })
 vim.keymap.set("n", "<leader>r", vim.diagnostic.setloclist, { desc = "Open diagnostics list" })
 
 -- Center when moving half a page
@@ -122,7 +122,21 @@ require("which-key").add({
     group = "Notes",
     { "<leader>of", "<cmd>ObsidianSearch<cr>",                  desc = "Open notes", icon = icons.ui.Note },
     { "<leader>on", require("ponurakk.scripts.notes").new_note, desc = "New Note",   icon = icons.ui.Note },
+  },
+
+  {
+    "<leader>t",
+    group = "Tabs",
+    { "<leader>tn", "<cmd>tabnew<cr>",                                           desc = "New Tab",         icon = icons.ui.NewFile },
+    { "<leader>tl", "<cmd>tabnext<cr>",                                          desc = "Next Tab",        icon = icons.ui.BoldArrowRight },
+    { "<leader>th", "<cmd>tabprevious<cr>",                                      desc = "Previous Tab",    icon = icons.ui.BoldArrowLeft },
+    { "<leader>tc", "<cmd>tabclose<cr>",                                         desc = "Close Tab",       icon = icons.ui.BoldClose },
+
+    { "<leader>tt", require("ponurakk.scripts.terminal").run_in_terminal,        desc = "New Terminal",    icon = icons.ui.Code },
+    { "<leader>tr", require("ponurakk.scripts.terminal").rerun_last_command,     desc = "Re Run",          icon = icons.ui.Code },
+    { "<leader>td", require("ponurakk.scripts.terminal").delete_terminal_buffer, desc = "Delete Terminal", icon = icons.ui.Code },
   }
+
 })
 
 require("which-key").add({
