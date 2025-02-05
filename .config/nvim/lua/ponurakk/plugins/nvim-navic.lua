@@ -42,7 +42,7 @@ return {
       },
       highlight = true,
       separator = " " .. icons.ui.ChevronRight .. " ",
-      depth_limit = 0,
+      depth_limit = 2,
       depth_limit_indicator = "..",
     }
   end

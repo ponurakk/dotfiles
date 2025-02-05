@@ -71,6 +71,10 @@ return {
       topdelete = { text = "‾" },
       changedelete = { text = "~" },
     },
+    current_line_blame_opts = {
+      delay = 0,
+      virt_text_pos = "right_align"
+    },
     on_attach = on_attach,
   },
 }
