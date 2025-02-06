@@ -33,11 +33,11 @@ starship init fish | source
 set -g fish_greeting
 
 # Aliases
-alias ll='ls -lh'
-alias la='ls -A'
-# alias bat='batcat'
-alias cat='bat -p'
-alias c='clear -x'
+alias ll="ls -lh"
+alias la="ls -A"
+# alias bat="batcat"
+alias cat="bat -p"
+alias c="clear -x"
 alias fuck='sudo $(fc -ln -1)'
 alias ec="$EDITOR $HOME/.zshrc" # edit .zshrc
 alias sc="source $HOME/.config/fish/config.fish" # reload fish configuration
@@ -59,19 +59,20 @@ alias vd1="ffmpeg -f x11grab -video_size 1920x1080 -framerate 60 -i :0.0+1360,0 
 alias vd2="ffmpeg -f x11grab -video_size 1360x768 -framerate 60 -i :0.0 -f pulse -i alsa_output.pci-0000_00_1f.3.analog-stereo.monitor -preset ultrafast -crf 18 -pix_fmt yuv420p $HOME/Videos/Record/$(date +"%Y-%m-%d-%T").mkv -y"
 
 ## Colors
-alias grep='grep --color=auto'
-alias egrep='egrep --color=auto'
-alias fgrep='fgrep --color=auto'
-alias diff='diff --color'
-alias ls='exa --icons --color=automatic'
-alias ip='ip -color'
-alias ping='grc ping'
-alias free='grc free -h'
-alias netstat='grc netstat'
-alias mount='grc mount'
-alias lsblk='grc lsblk'
-alias df='grc df'
-alias du='grc du'
+alias grep="grep --color=auto"
+alias egrep="egrep --color=auto"
+alias fgrep="fgrep --color=auto"
+alias diff="diff --color"
+alias ls="exa --icons --color=automatic"
+alias ip="ip -color"
+alias ping="grc ping"
+alias free="grc free -h"
+alias netstat="grc netstat"
+alias mount="grc mount"
+alias lsblk="grc lsblk"
+alias df="grc df"
+alias du="grc du"
+alias less="less -R"
 
 ## Other
 # alias lscmd="compgen $1"
