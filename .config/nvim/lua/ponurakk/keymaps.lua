@@ -120,8 +120,9 @@ require("which-key").add({
   {
     "<leader>o",
     group = "Notes",
-    { "<leader>of", "<cmd>ObsidianSearch<cr>",                  desc = "Open notes", icon = icons.ui.Note },
-    { "<leader>on", require("ponurakk.scripts.notes").new_note, desc = "New Note",   icon = icons.ui.Note },
+    { "<leader>of", "<cmd>ObsidianSearch<cr>",                      desc = "Open notes",   icon = icons.ui.Note },
+    { "<leader>on", require("ponurakk.scripts.notes").new_note,     desc = "New Note",     icon = icons.ui.Note },
+    { "<leader>op", require("ponurakk.scripts.notes").project_note, desc = "Project note", icon = icons.ui.Note },
   },
 
   {
