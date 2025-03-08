@@ -104,3 +104,11 @@ end
 function n
   nu -c $1
 end
+
+function medit
+  set filename $argv[1]
+  set extension $argv[2]
+  set new_filename (string split -r . $filename)[1].$extension
+
+  menyoki edit $filename --convert $extension save $new_filename
+end
