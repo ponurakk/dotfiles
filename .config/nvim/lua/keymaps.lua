@@ -39,6 +39,7 @@ require("which-key").add({
   -- { "<leader>c", "<cmd>BufferKill<CR>",                     desc = "Close Buffer" },
   { "<leader>f", "<cmd>Telescope find_files<cr>",           desc = "Find File",                   icon = icons.ui.FindFile },
   { "<leader>e", "<cmd>NvimTreeToggle<CR>",                 desc = "Explorer",                    icon = icons.ui.Tree },
+  { "<leader>r", "<cmd>TagbarToggle<CR>",                   desc = "Tagbar",                      icon = icons.ui.Tree },
   { "<leader>u", vim.cmd.UndotreeToggle,                    desc = "Show UndoTree",               icon = icons.ui.Tree },
 
   {

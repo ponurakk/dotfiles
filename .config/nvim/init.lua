@@ -64,6 +64,7 @@ require("lazy").setup({
   "numToStr/Comment.nvim",
   "RRethy/vim-illuminate",
   "leafOfTree/vim-vue-plugin",
+  "preservim/tagbar",
 }, {})
 
 require("settings")

@@ -1,3 +1,5 @@
+local icons = require("icons")
+
 vim.opt.fileencoding = "utf-8"
 
 -- Set highlight on search
@@ -32,6 +34,14 @@ vim.opt.undodir = vim.fn.expand("~/.vim/undodir")
 
 vim.g.undotree_SplitWidth = 40
 vim.g.undotree_WindowLayout = 3 -- set on right side
+
+-- Tagbar settings
+vim.g.tagbar_sort = 0
+vim.g.tagbar_show_tag_linenumbers = 2
+vim.g.tagbar_show_tag_count = 1
+vim.g.tagbar_iconchars = { icons.ui.TriangleShortArrowRight, icons.ui.TriangleShortArrowDown }
+vim.g.tagbar_wrap = 1
+vim.g.tagbar_silent = 1
 
 -- Keep signcolumn on by default
 vim.opt.signcolumn = 'yes'
