@@ -1,4 +1,4 @@
-local icons = require("ponurakk.icons")
+local icons = require("icons")
 -- [[ Basic Keymaps ]]
 
 -- Disable Space
@@ -120,22 +120,22 @@ require("which-key").add({
   {
     "<leader>o",
     group = "Notes",
-    { "<leader>of", "<cmd>ObsidianSearch<cr>",                      desc = "Open notes",   icon = icons.ui.Note },
-    { "<leader>on", require("ponurakk.scripts.notes").new_note,     desc = "New Note",     icon = icons.ui.Note },
-    { "<leader>op", require("ponurakk.scripts.notes").project_note, desc = "Project note", icon = icons.ui.Note },
+    { "<leader>of", "<cmd>ObsidianSearch<cr>",             desc = "Open notes",   icon = icons.ui.Note },
+    { "<leader>on", require("scripts.notes").new_note,     desc = "New Note",     icon = icons.ui.Note },
+    { "<leader>op", require("scripts.notes").project_note, desc = "Project note", icon = icons.ui.Note },
   },
 
   {
     "<leader>t",
     group = "Tabs",
-    { "<leader>tn", "<cmd>tabnew<cr>",                                           desc = "New Tab",         icon = icons.ui.NewFile },
-    { "<leader>tl", "<cmd>tabnext<cr>",                                          desc = "Next Tab",        icon = icons.ui.BoldArrowRight },
-    { "<leader>th", "<cmd>tabprevious<cr>",                                      desc = "Previous Tab",    icon = icons.ui.BoldArrowLeft },
-    { "<leader>tc", "<cmd>tabclose<cr>",                                         desc = "Close Tab",       icon = icons.ui.BoldClose },
+    { "<leader>tn", "<cmd>tabnew<cr>",                                  desc = "New Tab",         icon = icons.ui.NewFile },
+    { "<leader>tl", "<cmd>tabnext<cr>",                                 desc = "Next Tab",        icon = icons.ui.BoldArrowRight },
+    { "<leader>th", "<cmd>tabprevious<cr>",                             desc = "Previous Tab",    icon = icons.ui.BoldArrowLeft },
+    { "<leader>tc", "<cmd>tabclose<cr>",                                desc = "Close Tab",       icon = icons.ui.BoldClose },
 
-    { "<leader>tt", require("ponurakk.scripts.terminal").run_in_terminal,        desc = "New Terminal",    icon = icons.ui.Code },
-    { "<leader>tr", require("ponurakk.scripts.terminal").rerun_last_command,     desc = "Re Run",          icon = icons.ui.Code },
-    { "<leader>td", require("ponurakk.scripts.terminal").delete_terminal_buffer, desc = "Delete Terminal", icon = icons.ui.Code },
+    { "<leader>tt", require("scripts.terminal").run_in_terminal,        desc = "New Terminal",    icon = icons.ui.Code },
+    { "<leader>tr", require("scripts.terminal").rerun_last_command,     desc = "Re Run",          icon = icons.ui.Code },
+    { "<leader>td", require("scripts.terminal").delete_terminal_buffer, desc = "Delete Terminal", icon = icons.ui.Code },
   }
 
 })

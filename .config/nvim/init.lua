@@ -17,13 +17,13 @@ vim.opt.rtp:prepend(lazypath)
 -- [[ Configure plugins ]]
 require("lazy").setup({
   -- Theme
-  require("ponurakk.plugins.catppuccin"),
+  require("plugins.catppuccin"),
 
   -- Statuses
   "wakatime/vim-wakatime",
-  "ActivityWatch/aw-watcher-vim",
-  require("ponurakk.plugins.presence"),
-  require("ponurakk.plugins.timewasted"),
+  "FilipHarald/aw-watcher-vim",
+  require("plugins.presence"),
+  require("plugins.timewasted"),
 
   -- Syntax
   "ziglang/zig.vim",
@@ -31,46 +31,46 @@ require("lazy").setup({
   "fwcd/kotlin-language-server",
   -- "jdonaldson/vaxe",
   "mustache/vim-mustache-handlebars",
-  require("ponurakk.plugins.flutter-tools"),
-  require("ponurakk.plugins.markdown"),
+  require("plugins.flutter-tools"),
+  require("plugins.markdown"),
 
-  require("ponurakk.plugins.nvim-cmp"),
-  require("ponurakk.plugins.nvim-lspconfig"),
-  require("ponurakk.plugins.nvim-telescope"),
-  require("ponurakk.plugins.nvim-treesitter"),
-  require("ponurakk.plugins.nvim-tree"),
+  require("plugins.nvim-cmp"),
+  require("plugins.nvim-lspconfig"),
+  require("plugins.nvim-telescope"),
+  require("plugins.nvim-treesitter"),
+  require("plugins.nvim-tree"),
 
   -- "Gui" :P
-  require("ponurakk.plugins.lualine"),
-  require("ponurakk.plugins.transparent"),
-  require("ponurakk.plugins.which-key"),
-  require("ponurakk.plugins.alpha"),
-  require("ponurakk.plugins.trouble"),
-  require("ponurakk.plugins.nvim-navic"),
-  require("ponurakk.plugins.nvim-ufo"),
+  require("plugins.lualine"),
+  require("plugins.transparent"),
+  require("plugins.which-key"),
+  require("plugins.alpha"),
+  require("plugins.trouble"),
+  require("plugins.nvim-navic"),
+  require("plugins.nvim-ufo"),
 
   -- QoL
-  require("ponurakk.plugins.auto-pairs"),
-  require("ponurakk.plugins.todo-comments"),
-  require("ponurakk.plugins.indent-blankline"),
-  require("ponurakk.plugins.autoformat"),
-  require("ponurakk.plugins.numb"),
-  require("ponurakk.plugins.obsidian"),
-  require("ponurakk.plugins.undotree"),
-  require("ponurakk.plugins.gitsigns"),
-  require("ponurakk.plugins.guess-indent"),
-  require("ponurakk.plugins.codeium"),
+  require("plugins.auto-pairs"),
+  require("plugins.todo-comments"),
+  require("plugins.indent-blankline"),
+  require("plugins.autoformat"),
+  require("plugins.numb"),
+  require("plugins.obsidian"),
+  require("plugins.undotree"),
+  require("plugins.gitsigns"),
+  require("plugins.guess-indent"),
+  require("plugins.codeium"),
   "christoomey/vim-tmux-navigator",
   "numToStr/Comment.nvim",
   "RRethy/vim-illuminate",
   "leafOfTree/vim-vue-plugin",
 }, {})
 
-require("ponurakk.settings")
-require("ponurakk.keymaps")
-require("ponurakk.lsp")
+require("settings")
+require("keymaps")
+require("lsp")
 
 -- Scripts
-require("ponurakk.scripts.sql-rust-format")
+require("scripts.sql-rust-format")
 
-require("ponurakk.plugins.nvim-tree").setup()
+require("plugins.nvim-tree").setup()

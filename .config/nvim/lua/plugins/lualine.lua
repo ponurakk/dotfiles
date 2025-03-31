@@ -1,4 +1,4 @@
-local icons = require("ponurakk.icons")
+local icons = require("icons")
 local colors = {
   black        = "#1a1a1a",
   white        = "#fafafa",

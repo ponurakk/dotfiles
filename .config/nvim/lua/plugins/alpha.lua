@@ -1,4 +1,4 @@
-local icons = require("ponurakk.icons")
+local icons = require("icons")
 local if_nil = vim.F.if_nil
 
 local header = {

@@ -1,4 +1,4 @@
-local icons = require("ponurakk.icons")
+local icons = require("icons")
 
 return {
   "SmiteshP/nvim-navic",

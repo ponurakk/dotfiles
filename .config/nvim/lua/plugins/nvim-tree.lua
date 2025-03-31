@@ -35,7 +35,7 @@ return {
   cmd = { "NvimTreeToggle", "NvimTreeOpen", "NvimTreeFocus", "NvimTreeFindFileToggle" },
   event = "User DirOpened",
   config = function()
-    local icons = require("ponurakk.icons")
+    local icons = require("icons")
 
     require("nvim-tree").setup({
       auto_reload_on_write = false,
