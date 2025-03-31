@@ -21,6 +21,8 @@ return {
     -- Adds LSP completion capabilities
     "hrsh7th/cmp-nvim-lsp",
     "hrsh7th/cmp-path",
+    "jcha0713/cmp-tw2css",
+    "mtoohey31/cmp-fish",
 
     -- Adds a number of user-friendly snippets
     "rafamadriz/friendly-snippets",
@@ -46,6 +48,7 @@ return {
       tmux = "(TMUX)",
       copilot = "(Copilot)",
       treesitter = "(TreeSitter)",
+      fish = "(Fish)",
     }
 
     cmp.setup {
@@ -67,24 +70,24 @@ return {
           behavior = cmp.ConfirmBehavior.Replace,
           select = true,
         },
-        -- ["<Tab>"] = cmp.mapping(function(fallback)
-        --   if cmp.visible() then
-        --     cmp.select_next_item()
-        --   elseif luasnip.expand_or_locally_jumpable() then
-        --     luasnip.expand_or_jump()
-        --   else
-        --     fallback()
-        --   end
-        -- end, { "i", "s" }),
-        -- ["<S-Tab>"] = cmp.mapping(function(fallback)
-        --   if cmp.visible() then
-        --     cmp.select_prev_item()
-        --   elseif luasnip.locally_jumpable(-1) then
-        --     luasnip.jump(-1)
-        --   else
-        --     fallback()
-        --   end
-        -- end, { "i", "s" }),
+        ["<Tab>"] = cmp.mapping(function(fallback)
+          -- if cmp.visible() then
+          --   cmp.select_next_item()
+          if luasnip.expand_or_locally_jumpable() then
+            luasnip.expand_or_jump()
+          else
+            fallback()
+          end
+        end, { "i", "s" }),
+        ["<S-Tab>"] = cmp.mapping(function(fallback)
+          -- if cmp.visible() then
+          --   cmp.select_prev_item()
+          if luasnip.locally_jumpable(-1) then
+            luasnip.jump(-1)
+          else
+            fallback()
+          end
+        end, { "i", "s" }),
       },
       sources = {
         { name = "nvim_lsp" },
@@ -92,6 +95,8 @@ return {
         { name = "path" },
         { name = "treesitter" },
         { name = "tmux" },
+        { name = "cmp-tw2css" },
+        { name = "fish" },
       },
       window = {
         completion = require("cmp.config.window").bordered(),
