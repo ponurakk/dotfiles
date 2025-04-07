@@ -78,6 +78,8 @@ local servers = {
     filetypes = {
       "javascript",
       "typescript",
+      "typescript.tsx",
+      "typescriptreact",
       "vue",
     },
   },
