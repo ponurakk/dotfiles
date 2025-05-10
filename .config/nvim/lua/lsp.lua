@@ -80,7 +80,7 @@ local servers = {
       "typescript",
       "typescript.tsx",
       "typescriptreact",
-      "vue",
+      "vue"
     },
   },
   -- html = { filetypes = { 'html', 'twig', 'hbs'} },

@@ -33,6 +33,7 @@ require("lazy").setup({
   "mustache/vim-mustache-handlebars",
   require("plugins.flutter-tools"),
   require("plugins.markdown"),
+  "prettier/vim-prettier",
 
   require("plugins.nvim-cmp"),
   require("plugins.nvim-lspconfig"),

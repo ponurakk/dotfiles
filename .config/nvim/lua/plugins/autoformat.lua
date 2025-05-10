@@ -18,6 +18,17 @@ return {
       return _augroups[client.id]
     end
 
+    local prettier_filetypes = {
+      javascript = true,
+      javascriptreact = true,
+      typescript = true,
+      typescriptreact = true,
+      css = true,
+      scss = true,
+      html = true,
+      vue = true,
+    }
+
     -- Whenever an LSP attaches to a buffer, we will run this function.
     --
     -- See `:help LspAttach` for more information about this autocmd event.
@@ -28,6 +39,7 @@ return {
         local client_id = args.data.client_id
         local client = vim.lsp.get_client_by_id(client_id)
         local bufnr = args.buf
+        local filetype = vim.api.nvim_buf_get_option(bufnr, "filetype")
 
         -- Only attach to clients that support document formatting
         if not client.server_capabilities.documentFormattingProvider then
@@ -36,7 +48,7 @@ return {
 
         -- Tsserver usually works poorly. Sorry you work with bad languages
         -- You can remove this line if you know what you"re doing :)
-        if client.name == "tsserver" then
+        if client.name == "tsserver" or client.name == "volar" then
           return
         end
 
@@ -47,6 +59,11 @@ return {
           buffer = bufnr,
           callback = function()
             if not format_is_enabled then
+              return
+            end
+
+            if prettier_filetypes[filetype] then
+              vim.cmd("PrettierAsync")
               return
             end
 
