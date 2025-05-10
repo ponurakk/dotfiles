@@ -33,6 +33,9 @@ vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 vim.keymap.set('n', "K", "lua vim.lsp.buf.hover()")
 vim.keymap.set('n', "gd", "lua vim.lsp.buf.definition()")
 
+-- Escape from terminal
+vim.keymap.set("t", "<Esc>", "<C-\\><C-n>")
+
 require("which-key").add({
   { "<leader>;", "<cmd>Alpha<CR>",                          desc = "Dashboard",                   icon = icons.ui.Dashboard },
   { "<leader>/", "<Plug>(comment_toggle_linewise_current)", desc = "Comment toggle current line", icon = icons.ui.Comment },
