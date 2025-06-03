@@ -18,6 +18,7 @@ set -gx PATH "$BUN_INSTALL/bin:$PATH"
 set -gx PATH "$HOME/go/bin:$PATH"
 # kurwa
 set -gx PATH "$HOME/.local/share/gem/ruby/3.0.0/bin:$PATH"
+set -gx PATH "$HOME/.config/composer/vendor/bin:$PATH"
 
 set -gx PATH "$PATH:$ANDROID_HOME/tools"
 set -gx PATH "$PATH:$ANDROID_HOME/tools/bin"
