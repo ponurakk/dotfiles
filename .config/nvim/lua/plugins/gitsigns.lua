@@ -1,62 +1,58 @@
+local icons = require("icons")
+
 local function on_attach(bufnr)
   local gs = package.loaded.gitsigns
 
-  local function map(mode, l, r, opts)
-    opts = opts or {}
-    opts.buffer = bufnr
-    vim.keymap.set(mode, l, r, opts)
-  end
+  require("which-key").add({
+    {
+      "<leader>h",
+      group = "Git",
+      icon = icons.git.Repo,
+      { "<leader>hs", gs.stage_hunk,          desc = "[S]tage hunk" },
+      { "<leader>hr", gs.reset_hunk,          desc = "[R]eset hunk" },
+      { "<leader>hu", gs.undo_stage_hunk,     desc = "[U]ndo Stage Hunk" },
+      { "<leader>hS", gs.stage_buffer,        desc = "[S]tage buffer" },
+      { "<leader>hR", gs.reset_buffer,        desc = "[R]eset Buffer" },
+      { "<leader>hp", gs.preview_hunk_inline, desc = "[P]review Hunk" },
+      { "<leader>hl", gs.setloclist,          desc = "Loc [L]ist" },
+      { "<leader>hn", gs.next_hunk,           desc = "[N]ext hunk" },
+      { "<leader>hN", gs.prev_hunk,           desc = "[P]rev hunk" },
+      { "<leader>hb", gs.blame,               desc = "[B]lame" },
+      {
+        "<leader>ht",
+        group = "Toggle",
+        icon = icons.git.Diff,
+        { "<leader>htb", gs.toggle_current_line_blame, desc = "[T]oggle Git [B]lame Line" },
+        { "<leader>htl", gs.toggle_linehl,             desc = "[T]oggle [H]ine Highlight" },
+        { "<leader>htn", gs.toggle_numhl,              desc = "[T]oggle [N]umber Highlight" },
+        { "<leader>htw", gs.toggle_word_diff,          desc = "[T]oggle [W]ord Diff" },
+        { "<leader>htd", gs.toggle_deleted,            desc = "[T]oggle [D]eleted" },
+      },
+    }
+  })
 
-  -- Navigation
-  map({ "n", "v" }, "]c", function()
-    if vim.wo.diff then
-      return "]c"
-    end
-    vim.schedule(function()
-      gs.next_hunk()
-    end)
-    return "<Ignore>"
-  end, { expr = true, desc = "Jump to next hunk" })
-
-  map({ "n", "v" }, "[c", function()
-    if vim.wo.diff then
-      return "[c"
-    end
-    vim.schedule(function()
-      gs.prev_hunk()
-    end)
-    return "<Ignore>"
-  end, { expr = true, desc = "Jump to previous hunk" })
-
-  -- Actions
-  -- visual mode
-  map("v", "<leader>hs", function()
-    gs.stage_hunk { vim.fn.line ".", vim.fn.line "v" }
-  end, { desc = "stage git hunk" })
-  map("v", "<leader>hr", function()
-    gs.reset_hunk { vim.fn.line ".", vim.fn.line "v" }
-  end, { desc = "reset git hunk" })
-  -- normal mode
-  map("n", "<leader>hs", gs.stage_hunk, { desc = "git stage hunk" })
-  map("n", "<leader>hr", gs.reset_hunk, { desc = "git reset hunk" })
-  map("n", "<leader>hS", gs.stage_buffer, { desc = "git Stage buffer" })
-  map("n", "<leader>hu", gs.undo_stage_hunk, { desc = "undo stage hunk" })
-  map("n", "<leader>hR", gs.reset_buffer, { desc = "git Reset buffer" })
-  map("n", "<leader>hp", gs.preview_hunk, { desc = "preview git hunk" })
-  map("n", "<leader>hb", function()
-    gs.blame_line { full = false }
-  end, { desc = "git blame line" })
-  map("n", "<leader>hd", gs.diffthis, { desc = "git diff against index" })
-  map("n", "<leader>hD", function()
-    gs.diffthis "~"
-  end, { desc = "git diff against last commit" })
-
-  -- Toggles
-  map("n", "<leader>tb", gs.toggle_current_line_blame, { desc = "toggle git blame line" })
-  map("n", "<leader>td", gs.toggle_deleted, { desc = "toggle git show deleted" })
-
-  -- Text object
-  map({ "o", "x" }, "ih", ":<C-U>Gitsigns select_hunk<CR>", { desc = "select git hunk" })
+  require("which-key").add({
+    mode = { "v" },
+    {
+      "<leader>h",
+      group = "Git",
+      icon = icons.git.Repo,
+      {
+        "<leader>hs",
+        function()
+          gs.stage_hunk { vim.fn.line ".", vim.fn.line "v" }
+        end,
+        desc = "[S]tage hunk"
+      },
+      {
+        "<leader>hr",
+        function()
+          gs.reset_hunk { vim.fn.line ".", vim.fn.line "v" }
+        end,
+        desc = "[R]eset hunk"
+      },
+    }
+  })
 end
 
 return {

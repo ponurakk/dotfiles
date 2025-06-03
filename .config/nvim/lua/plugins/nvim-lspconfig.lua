@@ -7,10 +7,20 @@ return {
     "williamboman/mason-lspconfig.nvim",
 
     -- Useful status updates for LSP
-    { "j-hui/fidget.nvim",       opts = {} },
+    {
+      "j-hui/fidget.nvim",
+      event = "LspAttach", -- delay loading until an LSP actually attaches
+      opts = {},
+    },
 
     -- Additional lua configuration, makes nvim stuff amazing!
-    "folke/neodev.nvim",
+    {
+      "folke/neodev.nvim",
+      ft = "lua", -- only load when editing Lua files
+      config = function()
+        require("neodev").setup()
+      end,
+    },
 
     "pmizio/typescript-tools.nvim",
   }

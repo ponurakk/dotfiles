@@ -5,10 +5,6 @@ local icons = require("icons")
 vim.keymap.set({ "n", "v" }, "<Space>", "<Nop>", { silent = true })
 vim.keymap.set("n", "q:", "<Nop>", { silent = true })
 
--- Diagnostic keymaps
--- vim.keymap.set("n", "<leader>t", vim.diagnostic.open_float, { desc = "Open floating diagnostic message" })
-vim.keymap.set("n", "<leader>r", vim.diagnostic.setloclist, { desc = "Open diagnostics list" })
-
 -- Center when moving half a page
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "<C-u>", "<C-u>zz")
@@ -29,9 +25,6 @@ vim.keymap.set("n", "<F3>", ":noh<CR>")
 -- Move in visual mode
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
-
-vim.keymap.set('n', "K", "lua vim.lsp.buf.hover()")
-vim.keymap.set('n', "gd", "lua vim.lsp.buf.definition()")
 
 -- Escape from terminal
 vim.keymap.set("t", "<Esc>", "<C-\\><C-n>")
@@ -80,12 +73,13 @@ require("which-key").add({
     group = "LSP",
     icon = icons.ui.Language,
     { "<leader>la", "<cmd>lua vim.lsp.buf.code_action()<cr>",               desc = "Code Action" },
+    { "<leader>lb", "<cmd>Telescope lsp_references<cr>",                    desc = "References" },
     { "<leader>ld", "<cmd>Telescope diagnostics bufnr=0 theme=get_ivy<cr>", desc = "Buffer Diagnostics" },
     { "<leader>lw", "<cmd>Telescope diagnostics<cr>",                       desc = "Diagnostics" },
     { "<leader>lf", "<cmd>Format<CR>",                                      desc = "Format" },
     { "<leader>li", "<cmd>LspInfo<cr>",                                     desc = "Info" },
-    { "<leader>lI", "<cmd>Mason<cr>",                                       desc = "Mason Info" },
-    { "<leader>lD", "<cmd>lua vim.diagnostic.open_float()<CR>",             desc = "Line diagnostics" },
+    { "<leader>lI", "<cmd>Telescope lsp_implementations<cr>",               desc = "Implementations" },
+    { "<leader>lD", "<cmd>lua vim.diagnostic.open_float()<cr>",             desc = "Line diagnostics" },
     { "<leader>lj", "<cmd>lua vim.diagnostic.goto_next()<cr>",              desc = "Next Diagnostic", },
     { "<leader>lk", "<cmd>lua vim.diagnostic.goto_prev()<cr>",              desc = "Prev Diagnostic", },
     { "<leader>ll", "<cmd>lua vim.lsp.codelens.run()<cr>",                  desc = "CodeLens Action" },
@@ -140,6 +134,12 @@ require("which-key").add({
     { "<leader>tt", require("scripts.terminal").run_in_terminal,        desc = "New Terminal",    icon = icons.ui.Code },
     { "<leader>tr", require("scripts.terminal").rerun_last_command,     desc = "Re Run",          icon = icons.ui.Code },
     { "<leader>td", require("scripts.terminal").delete_terminal_buffer, desc = "Delete Terminal", icon = icons.ui.Code },
+  },
+
+  {
+    "g",
+    group = "Goto",
+    { "gD", "<cmd>lua vim.lsp.buf.declaration()<cr>", desc = "[G]oto [D]eclaration" }
   }
 
 })
