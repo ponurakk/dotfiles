@@ -226,7 +226,7 @@ bindsym Shift+XF86AudioPrev exec playerctl position 5-
 ## App shortcuts
 bindsym $mod+Ctrl+w exec $BROWSER
 # bindsym $mod+Ctrl+m workspace $ws10; exec xfce4-terminal -e cmus
-bindsym $mod+Ctrl+m workspace $ws10; exec $terminal --detach ~/Applications/sh/cmus-rpc
+bindsym $mod+Ctrl+m workspace $ws10; exec $terminal --detach ~/.local/bin/cmus-rpc
 bindsym $mod+Ctrl+n exec /usr/bin/thunar
 bindsym $mod+Ctrl+d exec /usr/bin/discord
 bindsym $mod+Ctrl+o exec obsidian

@@ -1,0 +1,3 @@
+#!/bin/bash
+
+cmus-rpc-rs -l &>/dev/null & cmus
