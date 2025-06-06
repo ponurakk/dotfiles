@@ -52,5 +52,38 @@ return {
       local path = spec.dir / tostring(spec.id)
       return path:with_suffix(".md")
     end,
+
+    -- Optional, by default when you use `:ObsidianFollowLink` on a link to an image
+    -- file it will be ignored but you can customize this behavior here.
+    ---@param img string
+    follow_img_func = function(img)
+      local note_path = vim.api.nvim_buf_get_name(0)
+      local note_dir = vim.fn.fnamemodify(note_path, ":h")
+
+      local img_path = note_dir .. "/attachments/" .. img
+
+      if vim.fn.filereadable(img_path) == 1 then
+        vim.fn.jobstart({ "feh", img_path }, { detach = true })
+      else
+        vim.notify("Image not found: " .. img_path, vim.log.levels.ERROR)
+      end
+    end,
+
+    callbacks = {
+      -- Runs anytime you enter the buffer for a note.
+      ---@param client obsidian.Client
+      ---@param note obsidian.Note
+      enter_note = function(client, note)
+        local workspace = client.current_workspace
+        if workspace and workspace.path then
+          vim.cmd("cd " .. tostring(workspace.root))
+        end
+
+        client.opts.callbacks.enter_note = function() end
+      end,
+    },
+    ui = {
+      enable = false,
+    }
   },
 }

@@ -139,15 +139,13 @@ require("which-key").add({
   {
     "g",
     group = "Goto",
-    { "gD", "<cmd>lua vim.lsp.buf.declaration()<cr>", desc = "[G]oto [D]eclaration" }
-  }
-
+    { "gD", "<cmd>lua vim.lsp.buf.declaration()<cr>", desc = "[G]oto [D]eclaration" },
+  },
 })
 
 require("which-key").add({
   mode = { "v" },
   { "<leader>",   name = "VISUAL <leader>" },
-  { "<leader>h",  "Git [H]unk" },
   { "<leader>/",  "<Plug>(comment_toggle_linewise_visual)", desc = "Comment toggle linewise (visual)" },
   { "<leader>la", "<cmd>lua vim.lsp.buf.code_action()<cr>", desc = "Code Action" },
 })

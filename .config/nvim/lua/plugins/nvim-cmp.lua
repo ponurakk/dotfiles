@@ -97,6 +97,7 @@ return {
         { name = "tmux" },
         { name = "cmp-tw2css" },
         { name = "fish" },
+        { name = "render-markdown" },
       },
       window = {
         completion = require("cmp.config.window").bordered(),

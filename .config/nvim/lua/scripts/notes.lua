@@ -12,6 +12,7 @@ M.new_note = function()
   end
 
   local note = obsidian:create_note {
+    id = user_input,
     title = user_input,
     no_write = true,
     tags = tags,

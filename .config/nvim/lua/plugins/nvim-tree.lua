@@ -47,8 +47,8 @@ return {
       root_dirs = {},
       prefer_startup_root = false,
       sync_root_with_cwd = true,
-      reload_on_bufenter = false,
-      respect_buf_cwd = false,
+      reload_on_bufenter = true,
+      respect_buf_cwd = true,
       on_attach = on_attach,
       select_prompts = false,
       view = {
@@ -139,6 +139,7 @@ return {
         debounce_delay = 15,
         update_root = true,
         ignore_list = {},
+        update_cwd = true,
       },
       diagnostics = {
         enable = true,

@@ -110,7 +110,8 @@ local buttons = {
     button("p", icons.ui.Project .. "  Projects ", "<CMD>Telescope projects<CR>"),
     button("r", icons.ui.History .. "  Recent files", ":Telescope oldfiles <CR>"),
     button("t", icons.ui.FindText .. "  Find Text", "<CMD>Telescope live_grep<CR>"),
-    button("c", icons.ui.Gear .. "  Configuration", "<CMD>edit ~/.config/nvim/init.lua<CR>"),
+    button("o", icons.ui.Note .. "  Obsidian Notes", "<CMD>ObsidianQuickSwitch<CR>"),
+    button("c", icons.ui.Gear .. "  Configuration", "<CMD>cd ~/.config/nvim | edit ~/.config/nvim/init.lua<CR>"),
     button("q", icons.ui.Close .. "  Quit", "<CMD>quit<CR>"),
   },
   opts = {
