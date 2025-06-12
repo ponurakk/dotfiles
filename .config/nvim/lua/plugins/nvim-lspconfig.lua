@@ -3,6 +3,7 @@ local lsp = require("lsp")
 return {
   -- LSP Configuration & Plugins
   "neovim/nvim-lspconfig",
+  event = { "BufReadPre", "BufNewFile" },
   dependencies = {
     -- Automatically install LSPs to stdpath for neovim
     {
@@ -13,11 +14,13 @@ return {
     },
 
     {
-      "williamboman/mason-lspconfig.nvim",
+      "WhoIsSethDaniel/mason-tool-installer.nvim",
       opts = {
         ensure_installed = lsp.ensure_installed,
-        automatic_installation = false,
-      }
+        integrations = {
+          ["mason-lspconfig"] = true,
+        }
+      },
     },
 
     -- Useful status updates for LSP
@@ -36,7 +39,9 @@ return {
       end,
     },
 
-    "pmizio/typescript-tools.nvim",
-
+    {
+      "pmizio/typescript-tools.nvim",
+      ft = "ts",
+    },
   },
 }

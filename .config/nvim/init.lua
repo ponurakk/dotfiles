@@ -26,11 +26,18 @@ require("lazy").setup({
   require("plugins.timewasted"),
 
   -- Syntax
-  "ziglang/zig.vim",
-  -- "udalov/kotlin-vim",
-  "fwcd/kotlin-language-server",
-  -- "jdonaldson/vaxe",
-  "mustache/vim-mustache-handlebars",
+  {
+    "ziglang/zig.vim",
+    ft = { "zig" }
+  },
+  {
+    "fwcd/kotlin-language-server",
+    ft = { "kt" }
+  },
+  {
+    "mustache/vim-mustache-handlebars",
+    ft = { "mustache", "handlebars", "hb" }
+  },
   require("plugins.markdown"),
   "prettier/vim-prettier",
 

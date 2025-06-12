@@ -22,7 +22,10 @@ return {
     "hrsh7th/cmp-nvim-lsp",
     "hrsh7th/cmp-path",
     "jcha0713/cmp-tw2css",
-    "mtoohey31/cmp-fish",
+    {
+      "mtoohey31/cmp-fish",
+      ft = "fish"
+    },
 
     -- Adds a number of user-friendly snippets
     "rafamadriz/friendly-snippets",
