@@ -22,7 +22,7 @@ require("lazy").setup({
   -- Statuses
   "wakatime/vim-wakatime",
   "FilipHarald/aw-watcher-vim",
-  require("plugins.presence"),
+  -- require("plugins.presence"),
   require("plugins.timewasted"),
 
   -- Syntax
@@ -64,13 +64,15 @@ require("lazy").setup({
   "christoomey/vim-tmux-navigator",
   "numToStr/Comment.nvim",
   "RRethy/vim-illuminate",
-  "leafOfTree/vim-vue-plugin",
+  -- "leafOfTree/vim-vue-plugin",
   "preservim/tagbar",
+  "b0o/SchemaStore.nvim",
 }, {})
 
 require("settings")
 require("keymaps")
-require("lsp")
+
+require("lsp").setup()
 
 -- Scripts
 require("scripts.sql-rust-format")

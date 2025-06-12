@@ -1,10 +1,24 @@
+local lsp = require("lsp")
+
 return {
   -- LSP Configuration & Plugins
   "neovim/nvim-lspconfig",
   dependencies = {
     -- Automatically install LSPs to stdpath for neovim
-    { "williamboman/mason.nvim", config = true },
-    "williamboman/mason-lspconfig.nvim",
+    {
+      "williamboman/mason.nvim",
+      config = function()
+        require("mason").setup()
+      end
+    },
+
+    {
+      "williamboman/mason-lspconfig.nvim",
+      opts = {
+        ensure_installed = lsp.ensure_installed,
+        automatic_installation = false,
+      }
+    },
 
     -- Useful status updates for LSP
     {
@@ -23,5 +37,6 @@ return {
     },
 
     "pmizio/typescript-tools.nvim",
-  }
+
+  },
 }
