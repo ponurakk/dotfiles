@@ -33,14 +33,13 @@ require("which-key").add({
   { "<leader>;", "<cmd>Alpha<CR>",                          desc = "Dashboard",                   icon = icons.ui.Dashboard },
   { "<leader>/", "<Plug>(comment_toggle_linewise_current)", desc = "Comment toggle current line", icon = icons.ui.Comment },
   -- { "<leader>c", "<cmd>BufferKill<CR>",                     desc = "Close Buffer" },
-  { "<leader>f", "<cmd>Telescope find_files<cr>",           desc = "Find File",                   icon = icons.ui.FindFile },
   { "<leader>e", "<cmd>NvimTreeToggle<CR>",                 desc = "Explorer",                    icon = icons.ui.Tree },
   { "<leader>r", "<cmd>TagbarToggle<CR>",                   desc = "Tagbar",                      icon = icons.ui.Tree },
   { "<leader>u", vim.cmd.UndotreeToggle,                    desc = "Show UndoTree",               icon = icons.ui.Tree },
 
   {
     "<leader>b",
-    group = "Bufers",
+    group = "Buffers",
     icon = icons.ui.Buffer,
     { "<leader>bj", "<cmd>BufferLinePick<cr>",                    desc = "Jump" },
     { "<leader>bf", "<cmd>Telescope buffers previewer=false<cr>", desc = "Find" },
@@ -88,25 +87,6 @@ require("which-key").add({
     { "<leader>ls", "<cmd>Telescope lsp_document_symbols<cr>",              desc = "Document Symbols" },
     { "<leader>lS", "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>",     desc = "Workspace Symbols", },
     { "<leader>le", "<cmd>Telescope quickfix<cr>",                          desc = "Telescope Quickfix" },
-  },
-
-  {
-    "<leader>s",
-    group = "Search",
-    icon = icons.ui.Search,
-    { "<leader>sb", "<cmd>Telescope git_branches<cr>",                                                desc = "Checkout branch" },
-    { "<leader>sc", "<cmd>Telescope colorscheme<cr>",                                                 desc = "Colorscheme" },
-    { "<leader>sf", "<cmd>Telescope find_files<cr>",                                                  desc = "Find File",                icon = icons.ui.FindFile },
-    { "<leader>sh", "<cmd>Telescope help_tags<cr>",                                                   desc = "Find Help" },
-    { "<leader>sH", "<cmd>Telescope highlights<cr>",                                                  desc = "Find highlight groups" },
-    { "<leader>sM", "<cmd>Telescope man_pages<cr>",                                                   desc = "Man Pages" },
-    { "<leader>sr", "<cmd>Telescope oldfiles<cr>",                                                    desc = "Open Recent File" },
-    { "<leader>sR", "<cmd>Telescope registers<cr>",                                                   desc = "Registers" },
-    { "<leader>st", "<cmd>Telescope live_grep<cr>",                                                   desc = "Text",                     icon = icons.ui.FindText },
-    { "<leader>sk", "<cmd>Telescope keymaps<cr>",                                                     desc = "Keymaps" },
-    { "<leader>sC", "<cmd>Telescope commands<cr>",                                                    desc = "Commands" },
-    { "<leader>sl", "<cmd>Telescope resume<cr>",                                                      desc = "Resume last search" },
-    { "<leader>sp", "<cmd>lua require('telescope.builtin').colorscheme({enable_preview = true})<cr>", desc = "Colorscheme with Preview", },
   },
 
   {

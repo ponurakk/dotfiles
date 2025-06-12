@@ -31,7 +31,6 @@ require("lazy").setup({
   "fwcd/kotlin-language-server",
   -- "jdonaldson/vaxe",
   "mustache/vim-mustache-handlebars",
-  require("plugins.flutter-tools"),
   require("plugins.markdown"),
   "prettier/vim-prettier",
 
@@ -52,9 +51,9 @@ require("lazy").setup({
 
   -- QoL
   require("plugins.auto-pairs"),
+  require("plugins.autoformat"),
   require("plugins.todo-comments"),
   require("plugins.indent-blankline"),
-  require("plugins.autoformat"),
   require("plugins.numb"),
   require("plugins.obsidian"),
   require("plugins.undotree"),
@@ -64,7 +63,6 @@ require("lazy").setup({
   "christoomey/vim-tmux-navigator",
   "numToStr/Comment.nvim",
   "RRethy/vim-illuminate",
-  -- "leafOfTree/vim-vue-plugin",
   "preservim/tagbar",
   "b0o/SchemaStore.nvim",
 }, {})
@@ -76,5 +74,3 @@ require("lsp").setup()
 
 -- Scripts
 require("scripts.sql-rust-format")
-
-require("plugins.nvim-tree").setup()

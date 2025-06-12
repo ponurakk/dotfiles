@@ -251,8 +251,4 @@ return {
       },
     })
   end,
-
-  setup = function()
-    vim.keymap.set('n', '<leader>e', require('nvim-tree.api').tree.toggle, { desc = '+Tree' })
-  end
 }

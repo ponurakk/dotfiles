@@ -167,7 +167,7 @@ return {
     sections = {
       lualine_a = { M.mode },
       lualine_b = { M.branch },
-      lualine_c = { M.diff, M.filename, M.navic },
+      lualine_c = { M.diff, M.filename },
       lualine_x = { M.diagnostics, M.codeium, M.timewasted },
       lualine_y = { M.spaces, M.filetype, M.fileformat, M.treesitter, M.location },
       lualine_z = { M.progress }
@@ -175,13 +175,15 @@ return {
     inactive_sections = {
       lualine_a = {},
       lualine_b = {},
-      lualine_c = { "filename" },
+      lualine_c = { M.filename },
       lualine_x = { M.location },
       lualine_y = {},
       lualine_z = {}
     },
     tabline = {},
-    winbar = {},
+    winbar = {
+      lualine_a = { M.navic },
+    },
     inactive_winbar = {},
     extensions = {}
   },

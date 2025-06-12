@@ -42,8 +42,11 @@ return {
       },
       highlight = true,
       separator = " " .. icons.ui.ChevronRight .. " ",
-      depth_limit = 2,
+      depth_limit = 5,
       depth_limit_indicator = "..",
+      lsp = {
+        auto_attach = true,
+      }
     }
   end
 }

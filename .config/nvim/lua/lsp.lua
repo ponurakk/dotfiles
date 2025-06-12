@@ -2,9 +2,23 @@ local M = {
   ensure_installed = { "rust_analyzer", "clangd", "ts_ls", "html", "lua_ls", "jsonls" }
 }
 
+function M.on_attach(client, bufnr)
+  if client.server_capabilities.documentSymbolProvider then
+    require("nvim-navic").attach(client, bufnr)
+  end
+end
+
+function M.capabilities()
+  -- nvim-cmp supports additional completion capabilities, so broadcast that to servers
+  local capabilities = vim.lsp.protocol.make_client_capabilities()
+  capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
+  return capabilities
+end
+
 function M.rust_setup()
   vim.lsp.config("rust_analyzer", {
     capabilities = M.capabilities(),
+    on_attach = M.on_attach,
     settings = {
       ["rust-analyzer"] = {
         cargo = { allFeatures = true },
@@ -18,6 +32,7 @@ end
 function M.lua_setup()
   vim.lsp.config("lua_ls", {
     capabilities = M.capabilities(),
+    on_attach = M.on_attach,
     settings = {
       Lua = {
         workspace = { checkThirdParty = false },
@@ -30,6 +45,7 @@ end
 function M.html_setup()
   vim.lsp.config("html", {
     capabilities = M.capabilities(),
+    on_attach = M.on_attach,
     filetypes = { "html", "templ", "twig", "hbs", "htmldjango" },
   })
 end
@@ -37,6 +53,7 @@ end
 function M.ts_setup()
   vim.lsp.config("ts_ls", {
     capabilities = M.capabilities(),
+    on_attach = M.on_attach,
     init_options = {
       plugins = {
         {
@@ -59,6 +76,7 @@ end
 function M.json_setup()
   vim.lsp.config("jsonls", {
     capabilities = M.capabilities(),
+    on_attach = M.on_attach,
     settings = {
       json = {
         schemas = require('schemastore').json.schemas(),
@@ -66,13 +84,6 @@ function M.json_setup()
       },
     },
   })
-end
-
-function M.capabilities()
-  -- nvim-cmp supports additional completion capabilities, so broadcast that to servers
-  local capabilities = vim.lsp.protocol.make_client_capabilities()
-  capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
-  return capabilities
 end
 
 function M.setup()
