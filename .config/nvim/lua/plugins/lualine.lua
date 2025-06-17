@@ -183,6 +183,7 @@ return {
     tabline = {},
     winbar = {
       lualine_a = { M.navic },
+      lualine_z = { M.filename },
     },
     inactive_winbar = {},
     extensions = {}
