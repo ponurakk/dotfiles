@@ -1,0 +1,9 @@
+[[plugin.deps]]
+use = "Sonico98/exifaudio"
+rev = "e766cd2"
+hash = "5fd39bf4e88d6a046d4b81691a38d615"
+
+[[flavor.deps]]
+use = "kmlupreti/ayu-dark"
+rev = "5f600aa"
+hash = "a05f94b9a20b64d814c7631074d65c4a"

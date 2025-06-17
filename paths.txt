@@ -11,6 +11,7 @@
 .config/starship.toml
 .config/cmus/rc
 .config/flameshot
+.config/yazi
 # Local
 .local/bin/tmux-sessionizer
 .local/bin/cmus-rpc-rs

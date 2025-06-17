@@ -1,0 +1,14 @@
+#:schema https://raw.githubusercontent.com/yazi-rs/schemas/refs/heads/main/schemas/yazi.json
+
+[mgr]
+show_hidden = true
+show_symlink = true
+
+[open]
+append_rules = [{ mime = "image/*", use = "editGimp" }]
+
+[opener]
+editGimp = [{ run = 'gimp "$@"', orphan = true, desc = "Open in GIMP" }]
+
+[plugin]
+prepend_previewers = [{ mime = "audio/*", run = "exifaudio" }]

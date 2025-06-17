@@ -52,6 +52,7 @@ alias rr="ranger"
 alias ff="fastfetch"
 alias yt-dwnl="yt-dlp --extract-audio --audio-format mp3 -o '%(playlist_autonumber)s - %(title)s.%(ext)s' $1"
 alias yt-lrc="yt-dlp --write-subs --sub-langs en --skip-download $1"
+alias y="yazi"
 
 ## Video
 alias vds="ffmpeg -f pulse -i alsa_output.pci-0000_00_1f.3.analog-stereo.monitor $HOME/Videos/Record/$(date +"%Y-%m-%d-%T").ogg -y"
