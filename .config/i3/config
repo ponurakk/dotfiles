@@ -470,6 +470,7 @@ set $darkgrey       #1a1a1a
 set $grey           #aaaaaa
 set $mediumgrey     #8b8b8b
 set $yellowbrown    #e1b700
+set $red						#4e0000
 
 # define colors for windows:
 #class										border		  bground			text			indicator			child_border
@@ -490,18 +491,21 @@ bar {
 	tray_output primary
 	tray_padding 0
 
+	binding_mode_indicator yes
 	strip_workspace_numbers yes
 	# strip_workspace_name no
 
 	colors {
-		separator						$purple
+		separator						$white
 		background					$black
 		statusline					$white
-		#                   border				bg						txt					indicator
-		focused_workspace   $mediumgrey   $grey         $darkgrey   $purple
-		active_workspace    $lightblue    $mediumgrey   $darkgrey   $purple
-		inactive_workspace  $darkgrey     $darkgrey     $grey       $purple
-		urgent_workspace    $urgentred    $urgentred    $white      $purple
+		focused_separator		$red
+
+		#                   border				bg						txt
+		focused_workspace   $mediumgrey   $black			$white
+		active_workspace    $mediumgrey   $black			$white
+		inactive_workspace  $black				$black			$grey
+		urgent_workspace    $urgentred    $red		    $white
 	}
 }
 
