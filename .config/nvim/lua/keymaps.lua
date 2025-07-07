@@ -119,6 +119,7 @@ require("which-key").add({
   {
     "g",
     group = "Goto",
+    { "gd", "<cmd>lua vim.lsp.buf.definition()<cr>",  desc = "[G]oto [D]efinition" },
     { "gD", "<cmd>lua vim.lsp.buf.declaration()<cr>", desc = "[G]oto [D]eclaration" },
   },
 })
