@@ -1,0 +1,299 @@
+! Title: AlleBlock
+!
+! Description: Ukrywa uciążliwe i zbędne elementy serwisu allegro.pl
+!
+! Homepage: https://alleblock.pl
+!
+! Issues: https://github.com/maciejtarmas/AlleBlock
+!
+! License: CC BY-NC 4.0
+
+! ****************************** ALLEGRO.PL ******************************
+
+! Strona główna + belka
+
+allegro.pl##div[data-prototype-id="allegro.expandableAdvertisement"]
+allegro.pl##div[data-role="showcase-container"]
+allegro.pl##div[data-role="image-tiles-container"]
+allegro.pl##div[data-role="offer-container"]
+allegro.pl##div[data-box-name="structure-tabs"]
+allegro.pl##div[data-box-name="structure-links"]
+allegro.pl##div[data-box-name="metrum-footer-partial-expander"]
+allegro.pl##div[data-box-name="f-social"]
+allegro.pl##div[data-box-name="DFP Parallax"]
+allegro.pl##div[data-box-name="allegro.login.smart.status"]
+allegro.pl##div[data-box-name="unauthenticated.image"]
+allegro.pl##div[data-box-name="allegro.richText"]
+allegro.pl##div[data-role="user-container"]
+allegro.pl##div[data-box-name="allegro.smart.status"]
+allegro.pl##div[data-box-name="promoted.links.grid.container"]
+allegro.pl##div[data-box-name="container"]
+allegro.pl##div[data-box-name="Belka-desktop"]
+allegro.pl##div[data-box-name="lazy content"]
+allegro.pl##div[data-box-name="allegro.showcase.premium.main.container"]
+allegro.pl##div[data-box-name="allegro.richText.image"]
+allegro.pl##div[data-box-name="allegro.modal Sns"]
+allegro.pl##div[data-box-name="IGNORE.allegro.attentioner.modal"]
+
+allegro.pl##div#kampyleFormContainer
+
+! Strona logowania
+
+allegro.pl##div[data-box-name="allegro.login.form"] > div > div > div:nth-of-type(2)
+
+! Interfejs mobilny
+
+allegro.pl##div[data-box-name="allegro.bar.mobileApp"]
+allegro.pl##div[data-box-name="allegro.showcase.main.mobile container"]
+allegro.pl##div[data-box-name^="MobileAppBanner"]
+allegro.pl##div[data-box-name="showcase mobile container"]
+allegro.pl##div[data-box-name="popularne miasta mob"]
+allegro.pl##div[data-box-name="kontenerek_z_warunkiem"]
+allegro.pl##div[data-box-name="attentioner_navigate__RWD"]
+allegro.pl##div[data-box-name="RENDER_FIRST_OCCURANCE"]
+
+! Menu str. główna ogólne
+
+allegro.pl##div[data-box-name$="desktop-dfp-wrapper"]
+allegro.pl##div[data-box-name$="desktop-nav-links"]
+
+! Koszyk
+
+allegro.pl##div[data-box-name="image.desktop"]
+allegro.pl##div[data-box-name="image.mobile"]
+
+! Lista ofert + wyniki wyszukiwania
+
+allegro.pl##div[data-box-name="premium.with.dfp"]
+allegro.pl##div[data-box-name="leftpanel_ads"]
+allegro.pl##article[data-analytics-view-label="showSponsoredItems"]
+allegro.pl##div[data-box-name="articles"]
+allegro.pl##div[data-box-name="rekomendacje"]
+allegro.pl##div[data-box-name="kategorie komplementarne kontener"]
+allegro.pl##div[data-box-name="seo text container"]
+allegro.pl##div[data-box-name="popularne miasta pc"]
+allegro.pl##div[data-box-name="survey-container"]
+allegro.pl##div[data-box-name="podobne wyszukiwania kontener"]
+allegro.pl##article[data-role="offer"] > section
+allegro.pl##div[data-box-name="premium.with.dfp.bottom"]
+
+! toporny sposób na wywalenie kolejnej iteracji "zapłać później" czy jak to oni tam nazwali
+
+allegro.pl##div.opbox-listing > div > section > section
+
+! Strona oferty
+
+allegro.pl##div[data-box-name="Container PPC Offers"]
+allegro.pl##div[data-box-name="Container Advertisment Premium"]
+allegro.pl##div[data-box-name="Container carousel_reco_show_item_bottom"]
+allegro.pl##div[data-box-name="offers_reco_bottom_marker"]
+allegro.pl##div[data-box-name="Container carousel_last_viewed"]
+allegro.pl##div[data-box-name="Container carousel_reco_show_item_bottom-placeholder"]
+
+! Strona oferty - zakończona
+
+allegro.pl##div[data-box-name="Container carousel reco ended"]
+allegro.pl##div[data-box-name="lazy_standalone_carousel_ads"]
+allegro.pl##div[data-box-name="Container carousel_reco_ended"]
+allegro.pl##div[data-box-name="finished_lazy_standalone_carousel_ads"]
+
+! Moje Allegro
+
+allegro.pl##div[data-box-name="deals"]
+allegro.pl##div[data-box-name="mobileAppBanner Container"]
+
+! Dziekujemy za zakupy
+
+allegro.pl##div[data-box-name="promo-services-container"]
+allegro.pl##div[data-box-name="reco-grid"]
+allegro.pl##div[data-box-name="ad-wrapper"]
+allegro.pl##div[data-box-name="booster-family-container"]
+allegro.pl##div[data-box-name="reco-grid v2"]
+
+! Skrypty/Trackery/Zasoby
+
+||assets.allegrostatic.com/opbox-gdpr-consents/*$domain=allegro.pl
+||analytics.google.com/*$domain=allegro.pl
+||doubleclick.net/*$domain=allegro.pl
+||gemius.pl/*$domain=allegro.pl
+||googletagmanager.com/*$domain=allegro.pl
+||googletagservices.com/*$domain=allegro.pl
+||kampyle.com/*$domain=allegro.pl
+||ngastatic.com/s4c/tracker.js$domain=allegro.pl
+||smartadserver.com/*$domain=allegro.pl
+||adform.net/*$domain=allegro.pl
+||datadome.co/*$domain=allegro.pl
+||flashtalking.com/*$domain=allegro.pl
+
+||assets.allegrostatic.com/metrum/icon/appstore*$domain=allegro.pl
+||assets.allegrostatic.com/metrum/icon/playstore*$domain=allegro.pl
+||assets.allegrostatic.com/metrum/icon/appgallery*$domain=allegro.pl
+||assets.allegrostatic.com/metrum/icon/facebook*$domain=allegro.pl
+||assets.allegrostatic.com/metrum/icon/linkedin*$domain=allegro.pl
+||assets.allegrostatic.com/metrum/icon/instagram*$domain=allegro.pl
+||assets.allegrostatic.com/metrum/icon/pinterest*$domain=allegro.pl
+||assets.allegrostatic.com/metrum/icon/youtube*$domain=allegro.pl
+||assets.allegrostatic.com/metrum/icon/charity*$domain=allegro.pl
+
+||assets.allegrostatic.com/opbox-adspremium/*$domain=allegro.pl
+||assets.allegrostatic.com/opbox-listing-seo/*$domain=allegro.pl
+||assets.allegrostatic.com/e09d28a6-external/*$domain=allegro.pl
+||assets.allegrostatic.com/opbox-plugin-facebook-tracking/*$domain=allegro.pl
+||assets.allegrostatic.com/gemius/*$domain=allegro.pl
+||assets.allegrostatic.com/opbox-adblock-detector/*$domain=allegro.pl
+||assets.allegrostatic.com/opbox-advertisement-box/*$script,domain=allegro.pl
+
+! Title: YT Ads
+!
+! Description: Removes notification about adblockers
+!
+! Credits: https://9gag.com/gag/abvoxPO
+
+! ****************************** YOUTUBE.COM ******************************
+
+||yt3.ggpht.com/o5blKSYaOdSSAbvLWJNrGBu3sKr5j0iqnfuko0uXM8EOgCVJKJOBZDEu32qhHgpEmSD0Vzk-bw-w1060-fcrop64=1,00005a57ffffa5a8-k-c0xffffffff-no-nd-rj*$domain=youtube.com
+
+youtube.com,youtubekids.com,youtube-nocookie.com#@#+js(json-prune, [].playerResponse.adPlacements [].playerResponse.playerAds playerResponse.adPlacements playerResponse.playerAds adPlacements playerAds)
+
+youtube.com,youtubekids.com,youtube-nocookie.com##+js(json-prune, [].playerResponse.adPlacements [].playerResponse.playerAds)
+
+youtube.com,youtubekids.com,youtube-nocookie.com##+js(json-prune, playerResponse.adPlacements playerResponse.playerAds adPlacements playerAds, playerConfig)
+
+youtube.com,youtubekids.com,youtube-nocookie.com##+js(json-prune, auxiliaryUi.messageRenderers.enforcementMessageViewModel)
+
+youtube.com,youtubekids.com,youtube-nocookie.com##+js(set, ytInitialPlayerResponse.auxiliaryUi.messageRenderers.enforcementMessageViewModel, undefined)
+
+! This is the old code, which may not be working correctly:
+
+youtube.com##+js(set, yt.config_.openPopupConfig.supportedPopups.adBlockMessageViewModel, false)
+
+youtube.com##+js(set, Object.prototype.adBlocksFound, 0)
+
+youtube.com##+js(set, ytplayer.config.args.raw_player_response.adPlacements, [])
+
+youtube.com##+js(set, Object.prototype.hasAllowedInstreamAd, true)
+
+! Title: Fandom bloat
+!
+! Description: Removes annoing popups, sidebars, etc.
+!
+! Credits: https://www.reddit.com/r/uBlockOrigin/comments/z0i6qy/aggressive_fandom_wiki_filter_set/
+
+! ****************************** FANDOM.COM ******************************
+fandom.com##.global-footer
+fandom.com##.mcf-wrapper
+fandom.com##.wikia-bar-anon.wikia-bar
+fandom.com##.global-navigation
+fandom.com##.page-side-edit.page-side-tool
+fandom.com##.render-wiki-recommendations
+fandom.com##.fandom-sticky-header
+fandom.com##.page-header__actions
+fandom.com##.page-header__categories
+fandom.com##.fandom-community-header__background
+fandom.com##.fandom-community-header__image
+fandom.com##.explore-menu.wds-dropdown
+fandom.com#$#.main-container { margin-left: 0 !important; width: 100% !important; }
+fandom.com##a[title="Discuss"]
+fandom.com##.unified-search__layout__right-rail
+fandom.com##.wikia-bar-collapse
+fandom.com#$#.community-header-wrapper { height: 1% !important;}
+fandom.com#$#.fandom-community-header__community-name { margin-top:10px !important; }
+fandom.com#$#.wds-tabs { margin-top:10px !important; }
+fandom.com#$#.fandom-community-header__top-container { padding-right: 10px !important; }
+fandom.com#$#.page-counter { margin-left: 9px !important; margin-top: 10px !important; }
+fandom.com#$#.fandom-community-header__top-container { white-space: nowrap !important; align-items: center !important; }
+fandom.com#$#.fandom-community-header__community-name { height: 100% !important; margin-right: 0 !important; }
+fandom.com#$#.wds-button-group { margin-top: 10px !important; }
+fandom.com#$#.search-modal::before { left: 0 !important; }
+fandom.com##a[title="UTC Clock"]
+fandom.com##.search-seeding
+fandom.com##.page__right-rail
+fandom.com##.page-header__top
+fandom.com###BackToTopBtn
+fandom.com##.highlight__sticky-container
+fandom.com##.notifications-placeholder
+fandom.com#$#.wds-dropdown__content { transform: translateX(-10%) !important; left: 0px !important;}
+
+! 2023-11-20 https://anontube.lvkaszus.pl
+anontube.lvkaszus.pl##div.h-box:nth-of-type(2)
+
+*##+js(nosiif, visibility, 1000)
+
+! 2023-12-14 https://ifunny.co
+ifunny.co##.VC6\+
+
+! 2023-12-15 https://emoji.gg
+emoji.gg##.angery-message
+
+! 2023-12-28 https://yt.drgnz.club
+yt.drgnz.club##div.h-box > h3
+
+! 2024-01-04 Remove nonsense no scroll
+startpage.com##html:remove-attr(style)
+
+! 2024-03-23 https://furher.in
+furher.in##body ~ div
+furher.in##body ~ iframe
+
+! 2024-04-04 https://www.facebook.com
+www.facebook.com##.x78zum5.xdt5ytf.x2lah0s.x193iq5w.x2bj2ny.x1ey2m1c.xayqjjm.x9f619.xds687c.x1xy6bms.xn6708d.x1s14bel.x1ye3gou.xixxii4.x17qophe.x1u8a7rm
+
+! 2024-05-13 https://teams.microsoft.com
+teams.microsoft.com###ngdialog1
+
+! Jun 3, 2024 https://www.testy.egzaminzawodowy.info
+www.testy.egzaminzawodowy.info##.visible-desktop.alert-error.alert
+
+! Jun 15, 2024 https://mevspace.com
+mevspace.com##.cookie-overlayer
+
+! Jun 15, 2024 https://inv.tux.pizza
+inv.tux.pizza##div.h-box > h3
+
+! Jun 20, 2024 https://lu.ma
+lu.ma##canvas
+
+! Jun 30, 2024 https://pks.rzeszow.pl
+pks.rzeszow.pl##.v1.cooPol > div
+
+! Jul 5, 2024 https://iv.datura.network
+iv.datura.network##div.h-box > h3
+
+! Jul 27, 2024 https://invidious.privacyredirect.com
+invidious.privacyredirect.com##h3 > p
+
+! Title: Ads and clipboard
+!
+! Description: Makes the video bigger and remove clipboard alteration
+!
+! Credits: https://github.com/MajkiIT/polish-ads-filter/blob/master/polish-adblock-filters/adblock_ublock.txt
+!
+! Date: Aug 01, 2024
+
+! ****************************** TEKSTOWO.PL ******************************
+tekstowo.pl#@##advSong
+tekstowo.pl#$##advSong { visibility: hidden !important }
+tekstowo.pl#@#[class^="adv-"]
+tekstowo.pl#$#.teledysk { flex: 0 0 100% !important; max-width: 100% !important; }
+tekstowo.pl##^script:has-text(Tekst pochodzi z)
+www.tekstowo.pl##div.mt-3.left-box:last-of-type
+
+! Make background darker for darkreader
+www.pracuj.pl###__next:style(background-color: #131516 !important)
+it.pracuj.pl###__next:style(background-color: #131516 !important)
+
+filser.cc##.col > div:nth-child(1)
+
+! Oct 29, 2024 Fuck you XD
+listeamed.net##^script:has-text(Do not open DevTools)
+
+! Dec 10, 2024 https://brainly.pl
+brainly.pl##.AllegroBannerLego-module__content--9h0qG
+
+! Jun 5, 2025 https://dbdiagram.io
+dbdiagram.io##.shadow-slate-400.shadow-lg.bg-main-gray-dark.py-2.pr-2.pl-0.gap-4.flex-col.flex
+
+! Jun 6, 2025 https://www.e-piotripawel.pl
+www.e-piotripawel.pl###modal-postcode > .modal-dialog > .modal-content
+www.e-piotripawel.pl###modal-postcode
+www.e-piotripawel.pl##.in.fade.modal-backdrop
