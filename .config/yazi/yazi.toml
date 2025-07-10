@@ -5,10 +5,14 @@ show_hidden = true
 show_symlink = true
 
 [open]
-append_rules = [{ mime = "image/*", use = "editGimp" }]
+append_rules = [
+  { mime = "image/*", use = "editGimp" },
+  { mime = "inode/directory", use = "tmuxWindow" },
+]
 
 [opener]
 editGimp = [{ run = 'gimp "$@"', orphan = true, desc = "Open in GIMP" }]
+tmuxWindow = [{ run = 'tmux new-window -c "$@"', desc = "Open in TMUX window" }]
 
 [plugin]
 prepend_previewers = [{ mime = "audio/*", run = "exifaudio" }]
