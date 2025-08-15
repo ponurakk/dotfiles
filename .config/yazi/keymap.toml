@@ -1,0 +1,7 @@
+[mgr]
+prepend_keymap = [
+  { on = [
+    "F",
+    "i",
+  ], run = 'search_do --via=fd \.(jpg|jpeg|png|gif)$' },
+]

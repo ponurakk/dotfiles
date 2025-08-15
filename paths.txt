@@ -12,6 +12,7 @@
 .config/cmus/rc
 .config/flameshot
 .config/yazi
+.config/taplo.toml
 # Local
 .local/bin/tmux-sessionizer
 .local/bin/cmus-rpc-rs

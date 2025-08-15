@@ -10,6 +10,7 @@ set -gx JAVA_HOME /usr/lib/jvm/java-17-openjdk
 set -gx BROWSER firefox-developer-edition
 set -gx PNPM_HOME "$HOME/.local/share/pnpm"
 set -gx NDK_HOME "$ANDROID_HOME/ndk/26.1.10909125"
+set -gx TAPLO_CONFIG "$HOME/.config/taplo.toml"
 
 # Set path
 set -gx PATH "$HOME/.local/bin:$PATH"
@@ -26,6 +27,7 @@ set -gx PATH "$PATH:$ANDROID_HOME/platform-tools"
 set -gx PATH "/opt/flutter/bin:$PATH"
 set -gx PATH "$PATH:$PNPM_HOME"
 set -gx PATH "$PATH:$HOME/Applications/bin"
+set -gx PATH "$PATH:$JAVA_HOME/bin:$PATH"
 
 # Init starship
 starship init fish | source
@@ -113,4 +115,28 @@ function medit
   set new_filename (string split -r . $filename)[1].$extension
 
   menyoki edit $filename --convert $extension save $new_filename
+end
+
+function mp4togif
+  set filename $argv[1]
+  set fps (test -n "$argv[2]"; and echo $argv[2]; or echo 10)
+
+  if test -z "$filename"
+    echo "Usage: mp4togif <file.mp4> [fps]"
+    return 1
+  end
+
+  set new_filename (string split -r . $filename)[1].gif
+  set scale (ffprobe -v error -select_streams v:0 -show_entries stream=width -of csv=p=0 $filename)
+
+  echo -n "🎨 Generating palette... "
+  ffmpeg -loglevel quiet -nostats -i $filename -vf "fps=$fps,scale=$scale:-1:flags=lanczos,palettegen" palette.png -y
+  echo "Done!"
+
+  echo -n "🎬 Rendering gif magic... "
+  ffmpeg -loglevel quiet -nostats -i $filename -i palette.png -lavfi "fps=$fps,scale=$scale:-1:flags=lanczos [x]; [x][1:v] paletteuse" $new_filename -y
+  echo "Done!"
+
+  rm -f palette.png
+  echo "✅ Output: $new_filename"
 end

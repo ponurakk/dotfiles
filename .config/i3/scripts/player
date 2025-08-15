@@ -1,5 +1,9 @@
 #!/usr/bin/env bash
 
+if ! playerctl -l 2>/dev/null | grep -q .; then
+    exit 0
+fi
+
 TITLE="$(playerctl metadata title)"
 ARTIST="$(playerctl metadata artist)"
 
