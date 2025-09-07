@@ -6,10 +6,11 @@ end
 set -gx BUN_INSTALL "$HOME/.bun"
 set -gx ANDROID_HOME /opt/android-sdk
 set -gx EDITOR nvim
-set -gx JAVA_HOME /usr/lib/jvm/java-17-openjdk
+set -gx JAVA_HOME /usr/lib/jvm/java-21-openjdk/
 set -gx BROWSER firefox-developer-edition
 set -gx PNPM_HOME "$HOME/.local/share/pnpm"
 set -gx NDK_HOME "$ANDROID_HOME/ndk/26.1.10909125"
+set -gx PICO_SDK_PATH "/usr/share/pico-sdk"
 set -gx TAPLO_CONFIG "$HOME/.config/taplo.toml"
 
 # Set path
@@ -58,9 +59,9 @@ alias y="yazi"
 
 ## Video
 alias vds="ffmpeg -f pulse -i alsa_output.pci-0000_00_1f.3.analog-stereo.monitor $HOME/Videos/Record/$(date +"%Y-%m-%d-%T").ogg -y"
-alias vdv="ffmpeg -f x11grab -video_size 3280x1080 -framerate 60 -i :0.0 -f pulse -i alsa_output.pci-0000_00_1f.3.analog-stereo.monitor -preset ultrafast -crf 18 -pix_fmt yuv420p $HOME/Videos/Record/$(date +"%Y-%m-%d-%T").mkv -y"
-alias vd1="ffmpeg -f x11grab -video_size 1920x1080 -framerate 60 -i :0.0+1360,0  -f pulse -i alsa_output.pci-0000_00_1f.3.analog-stereo.monitor -preset ultrafast -crf 18 -pix_fmt yuv420p $HOME/Videos/Record/$(date +"%Y-%m-%d-%T").mkv -y"
-alias vd2="ffmpeg -f x11grab -video_size 1360x768 -framerate 60 -i :0.0 -f pulse -i alsa_output.pci-0000_00_1f.3.analog-stereo.monitor -preset ultrafast -crf 18 -pix_fmt yuv420p $HOME/Videos/Record/$(date +"%Y-%m-%d-%T").mkv -y"
+alias vdv="ffmpeg -f x11grab -video_size 3840x1080 -framerate 60 -i :0.0 -f pulse -i alsa_output.pci-0000_00_1f.3.analog-stereo.monitor -preset ultrafast -crf 18 -pix_fmt yuv420p $HOME/Videos/Record/$(date +"%Y-%m-%d-%T").mkv -y"
+alias vd1="ffmpeg -f x11grab -video_size 1920x1080 -framerate 60 -i :0.0+1920,0  -f pulse -i alsa_output.pci-0000_00_1f.3.analog-stereo.monitor -preset ultrafast -crf 18 -pix_fmt yuv420p $HOME/Videos/Record/$(date +"%Y-%m-%d-%T").mkv -y"
+alias vd2="ffmpeg -f x11grab -video_size 1920x1080 -framerate 60 -i :0.0 -f pulse -i alsa_output.pci-0000_00_1f.3.analog-stereo.monitor -preset ultrafast -crf 18 -pix_fmt yuv420p $HOME/Videos/Record/$(date +"%Y-%m-%d-%T").mkv -y"
 
 ## Colors
 alias grep="grep --color=auto"
@@ -139,4 +140,10 @@ function mp4togif
 
   rm -f palette.png
   echo "✅ Output: $new_filename"
+end
+
+function imgtobase64
+  set filename $argv[1]
+  set extension (string split -r . $filename)[2]
+  echo "data:image/$extension;base64,$(base64 -w 0 $filename)" | xclip -selection clipboard
 end

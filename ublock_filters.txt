@@ -297,3 +297,15 @@ dbdiagram.io##.shadow-slate-400.shadow-lg.bg-main-gray-dark.py-2.pr-2.pl-0.gap-4
 www.e-piotripawel.pl###modal-postcode > .modal-dialog > .modal-content
 www.e-piotripawel.pl###modal-postcode
 www.e-piotripawel.pl##.in.fade.modal-backdrop
+
+! Jul 8, 2025 https://www.instagram.com
+||www.instagram.com/images/instagram/xig/homepage/screenshots_v3/instagram-web-lox-image.png$image
+
+! Aug 26, 2025 https://9gag.com
+9gag.com##.billboard-top-wrapper
+9gag.com###top-navb:style(top: 0px !important)
+9gag.com##.post-tab-bar__wrapper.fixed:style(top: 48px !important)
+
+! Sep 6, 2025 https://www.deepl.com
+www.deepl.com##.text-redesign-slate-gray-500.bg-redesign-jade-green-400
+www.deepl.com##.SidePanel

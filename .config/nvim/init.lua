@@ -22,7 +22,7 @@ require("lazy").setup({
   -- Statuses
   "wakatime/vim-wakatime",
   "FilipHarald/aw-watcher-vim",
-  -- require("plugins.presence"),
+  require("plugins.presence"),
   require("plugins.timewasted"),
 
   -- Syntax
