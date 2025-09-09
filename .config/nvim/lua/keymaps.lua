@@ -75,7 +75,7 @@ require("which-key").add({
     { "<leader>lb", "<cmd>Telescope lsp_references<cr>",                    desc = "References" },
     { "<leader>ld", "<cmd>Telescope diagnostics bufnr=0 theme=get_ivy<cr>", desc = "Buffer Diagnostics" },
     { "<leader>lw", "<cmd>Telescope diagnostics<cr>",                       desc = "Diagnostics" },
-    { "<leader>lf", "<cmd>lua vim.lsp.buf.format()<cr>",                    desc = "Format" },
+    { "<leader>lf", require("conform").format,                              desc = "Format" },
     { "<leader>li", "<cmd>LspInfo<cr>",                                     desc = "Info" },
     { "<leader>lI", "<cmd>Telescope lsp_implementations<cr>",               desc = "Implementations" },
     { "<leader>lD", "<cmd>lua vim.diagnostic.open_float()<cr>",             desc = "Line diagnostics" },

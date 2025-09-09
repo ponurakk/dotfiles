@@ -39,7 +39,6 @@ require("lazy").setup({
     ft = { "mustache", "handlebars", "hb" }
   },
   require("plugins.markdown"),
-  "prettier/vim-prettier",
 
   require("plugins.nvim-cmp"),
   require("plugins.nvim-lspconfig"),
@@ -58,7 +57,7 @@ require("lazy").setup({
 
   -- QoL
   require("plugins.auto-pairs"),
-  require("plugins.autoformat"),
+  require("plugins.conform"),
   require("plugins.todo-comments"),
   require("plugins.indent-blankline"),
   require("plugins.numb"),
