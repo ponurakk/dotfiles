@@ -66,6 +66,7 @@ require("lazy").setup({
   require("plugins.gitsigns"),
   require("plugins.guess-indent"),
   require("plugins.codeium"),
+  require("plugins.colorizer"),
   "christoomey/vim-tmux-navigator",
   "numToStr/Comment.nvim",
   "RRethy/vim-illuminate",

@@ -68,8 +68,15 @@ return {
           -- TSX (Typescript React)
           ["@constructor.tsx"] = { fg = C.lavender },
           ["@tag.attribute.tsx"] = { fg = C.teal, style = O.styles.miscs or { "italic" } },
+          ["@tag.builtin.tsx"] = { fg = C.mauve }, -- Tags like html tag names.
           ["@type.builtin.c"] = { fg = C.yellow, style = {} },
           ["@type.builtin.cpp"] = { fg = C.yellow, style = {} },
+          ["@keyword.import.c"] = { fg = C.mauve },
+          ["@keyword.import.cpp"] = { fg = C.mauve },
+          ["@type"] = { fg = C.yellow },
+          ["@constant.c"] = { fg = C.yellow },
+          ["@lsp.type.enumMember"] = { fg = C.peach },
+          ["@function.macro"] = { fg = C.green }
         }
       end,
     }
