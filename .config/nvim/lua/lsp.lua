@@ -117,12 +117,11 @@ function M.setup()
     end
   end
 
-  local lspconfig = require("lspconfig")
   for _, pkg in ipairs(registry.get_installed_packages()) do
     if pkg.spec.categories[1] == "LSP" then
       local lsp_name = package_to_lspconfig[pkg.name]
 
-      if lspconfig[lsp_name] then
+      if lsp_name then
         vim.lsp.config(lsp_name, {
           on_attach = M.on_attach,
           -- capabilities = M.capabilities(),
