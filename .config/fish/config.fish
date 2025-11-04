@@ -77,6 +77,7 @@ alias mount="grc mount"
 alias lsblk="grc lsblk"
 alias df="grc df"
 alias du="grc du"
+alias tail="grc tail"
 alias less="less -R"
 
 ## Other
