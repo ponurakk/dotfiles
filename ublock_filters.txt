@@ -309,3 +309,14 @@ www.e-piotripawel.pl##.in.fade.modal-backdrop
 ! Sep 6, 2025 https://www.deepl.com
 www.deepl.com##.text-redesign-slate-gray-500.bg-redesign-jade-green-400
 www.deepl.com##.SidePanel
+
+! Oct 4, 2025 https://mangadex.org
+||mangadex.org/promo/operagx/xl2%20opera%20en%20*.png$image
+||mangadex.org/promo/operagx/320x256%20opera%20en%20*.png$image
+
+! Oct 21, 2025 https://wolnelektury.pl
+wolnelektury.pl##.annoy-banner
+
+! Dec 19, 2025 https://9gag.com
+9gag.com##.potz-badge
+9gag.com##.poll-container
