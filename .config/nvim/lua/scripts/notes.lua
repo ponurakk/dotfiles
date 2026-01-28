@@ -49,6 +49,7 @@ M.project_note = function()
     vim.cmd("vs")
     obsidian:open_note(note, { sync = true, open_strategy = "current" })
     vim.cmd("vertical resize 40")
+    vim.cmd("setlocal winfixwidth")
 
     if obsidian:resolve_note(note.path.name) == nil then
       obsidian:write_note_to_buffer(note)
