@@ -45,10 +45,10 @@ return {
       hijack_unnamed_buffer_when_opening = false,
       sort_by = "name",
       root_dirs = {},
-      prefer_startup_root = false,
-      sync_root_with_cwd = true,
+      prefer_startup_root = true,
+      sync_root_with_cwd = false,
       reload_on_bufenter = true,
-      respect_buf_cwd = true,
+      respect_buf_cwd = false,
       on_attach = on_attach,
       select_prompts = false,
       view = {
