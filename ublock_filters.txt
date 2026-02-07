@@ -320,3 +320,23 @@ wolnelektury.pl##.annoy-banner
 ! Dec 19, 2025 https://9gag.com
 9gag.com##.potz-badge
 9gag.com##.poll-container
+
+! Dec 23, 2025 https://www.deepl.com
+www.deepl.com##.text-center.py-4.px-6.items-center.flex-col.max-w-\[1400px\].w-full.flex.mb-0.mx-auto.dark.lg\:gap-redesign-4.gap-redesign-8.md\:pt-redesign-8.md\:pb-redesign-7.md\:px-redesign-6
+
+! Dec 23, 2025 https://chatgpt.com
+chatgpt.com##.sm\:block.hidden > .max-w-\[768px\].\@container\/images-promo-banner.dark\:bg-token-main-surface-secondary.text-token-text-primary.bg-token-main-surface-primary.border-token-border-default.md\:items-center.shadow-xxs.dark\:border-transparent.lg\:mx-auto.\[text-wrap\:pretty\].text-sm.pe-3.ps-5.py-4.border.rounded-3xl.gap-4.items-start.w-full.flex
+
+! Dec 27, 2025 https://www.deepl.com
+www.deepl.com##.inset-0.absolute.z-10.\!bg-gray-900\/50.place-items-center.grid.xl\:rounded-lg.dark\:bg-gray-800.dark\:border-gray-700.mobile\:shadow-none.shadow-sm.bg-white.border-gray-100.border
+
+! Dec 28, 2025 https://chatgpt.com
+chatgpt.com##.max-w-\[768px\].\@container\/images-promo-banner.dark\:bg-token-main-surface-secondary.text-token-text-primary.bg-token-main-surface-primary.border-token-border-default.md\:items-center.shadow-xxs.dark\:border-transparent.lg\:mx-auto.\[text-wrap\:pretty\].text-sm.pe-3.ps-5.py-4.border.rounded-3xl.gap-4.items-start.w-full.flex
+chatgpt.com##.lg\:block.hidden
+
+! Dec 28, 2025 https://mangadex.org
+||mangadex.org/temp/placeholder/*_Banner_Ad_*.png$image
+
+! Jan 6, 2026 https://www.instagram.com
+||static.cdninstagram.com/rsrc.php/v4/yt/r/pAv7hjq-51n.png$image
+
