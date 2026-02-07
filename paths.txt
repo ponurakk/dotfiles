@@ -17,6 +17,7 @@
 .local/bin/tmux-sessionizer
 .local/bin/cmus-rpc-rs
 .local/bin/cmus-rpc
+.local/bin/update_lrc.sh
 .local/share/fonts/Iosevka-Nerd-Font-Complete.ttf
 .local/share/fonts/JetBrains-Mono-Nerd-Font-Complete.ttf
 # Home
