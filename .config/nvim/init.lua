@@ -21,7 +21,7 @@ require("lazy").setup({
 
   -- Statuses
   "wakatime/vim-wakatime",
-  "FilipHarald/aw-watcher-vim",
+  -- "FilipHarald/aw-watcher-vim",
   require("plugins.presence"),
   require("plugins.timewasted"),
 
@@ -72,6 +72,7 @@ require("lazy").setup({
   "RRethy/vim-illuminate",
   "preservim/tagbar",
   "b0o/SchemaStore.nvim",
+  "LunarVim/bigfile.nvim",
 }, {})
 
 require("settings")
