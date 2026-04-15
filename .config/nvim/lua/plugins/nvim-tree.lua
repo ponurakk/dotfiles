@@ -161,13 +161,13 @@ return {
         dotfiles = false,
         git_clean = false,
         no_buffer = false,
-        custom = { "node_modules", "\\.cache" },
+        custom = { "node_modules", "\\.cache", "target" },
         exclude = {},
       },
       filesystem_watchers = {
         enable = true,
         debounce_delay = 50,
-        ignore_dirs = {},
+        ignore_dirs = { "node_modules", "target" },
       },
       git = {
         enable = true,
@@ -245,10 +245,10 @@ return {
           watcher = false,
         },
       },
-      system_open = {
-        cmd = nil,
-        args = {},
-      },
+      -- system_open = {
+      --   cmd = nil,
+      --   args = {},
+      -- },
     })
   end,
 }

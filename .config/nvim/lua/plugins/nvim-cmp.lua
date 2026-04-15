@@ -21,7 +21,6 @@ return {
     -- Adds LSP completion capabilities
     "hrsh7th/cmp-nvim-lsp",
     "hrsh7th/cmp-path",
-    "jcha0713/cmp-tw2css",
     {
       "mtoohey31/cmp-fish",
       ft = "fish"
@@ -35,6 +34,7 @@ return {
     local luasnip = require("luasnip")
     local icons = require("icons")
     require("luasnip.loaders.from_vscode").lazy_load()
+    require("luasnip.loaders.from_lua").load({ paths = "~/.config/nvim/snippets" })
     luasnip.config.setup {}
 
     local M = {}
@@ -98,7 +98,6 @@ return {
         { name = "path" },
         { name = "treesitter" },
         { name = "tmux" },
-        { name = "cmp-tw2css" },
         { name = "fish" },
         { name = "render-markdown" },
       },
