@@ -316,6 +316,8 @@ assign [class="Wine Desktop(?i)"] $ws6
 assign [class="explorer.exe"] $ws6
 assign [class="freeorion"] $ws6
 assign [class="io.github.endless_sky.endless_sky"] $ws6
+assign [class="Portal(?i)"] $ws6
+assign [class="Fran Bow.x86_64(?i)"] $ws6
 assign [class="steam_app_(?i)"] $ws6
 
 ## ws7
@@ -468,7 +470,7 @@ set $darkblue       #08052b
 set $lightblue      #5294e2
 set $urgentred      #e53935
 set $white          #ffffff
-set $black          #000000
+set $black          #0000007F
 set $purple         #e345ff
 set $darkgrey       #1a1a1a
 set $grey           #aaaaaa
@@ -490,7 +492,7 @@ client.urgent             $urgentred  $urgentred  $white    $yellowbrown  $yello
 bar {
 	font pango: Iosevka Term Bold 10
 	status_command i3blocks -c ~/.config/i3/i3blocks.conf
-	# i3bar_command i3bar --transparency
+	i3bar_command i3bar --transparency
 	position top
 	tray_output primary
 	tray_padding 0
